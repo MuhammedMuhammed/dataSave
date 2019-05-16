@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngData", "Gardinia\EngData.csproj", "{B1F179BA-20E0-4BF8-8400-D1A006D05A52}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{5B5D0944-AEB1-4617-A78D-8D79C7E2F4ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1F179BA-20E0-4BF8-8400-D1A006D05A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F179BA-20E0-4BF8-8400-D1A006D05A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F179BA-20E0-4BF8-8400-D1A006D05A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F179BA-20E0-4BF8-8400-D1A006D05A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5D0944-AEB1-4617-A78D-8D79C7E2F4ED}.Debug|Any CPU.ActiveCfg = Debug
+		{5B5D0944-AEB1-4617-A78D-8D79C7E2F4ED}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D5F87BD-5D86-4C4C-9ECA-4A8C16579395}
+	EndGlobalSection
+EndGlobal
