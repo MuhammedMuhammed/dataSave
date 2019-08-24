@@ -677,84 +677,90 @@ namespace Gardinia
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton4, metroButton4.Text, "تقرير التربة");
-            OpenFileDialog ofdMultiselect = new OpenFileDialog();
-            ofdMultiselect.Multiselect = true;
-            ofdMultiselect.Filter = "select needed Files |*.jpg; *.png; *.pdf";
-            ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            if (ofdMultiselect.ShowDialog() == DialogResult.OK)
-            {
-                string sqlInsertingQuery = "Insert Into " + "ProjectReports" + "(dustReport,ContractCode,recordingdateOnDB)Values('" + metroButton4.Text + "','" + textBox7.Text + "','" + DateTime.Now + "')";
-                MultiSelect(metroButton4, metroButton4.Text, "تقرير التربة", ofdMultiselect, "AsBuiltTable", sqlInsertingQuery);
-                string selectInBT = "Select COUNT(*) from BuildsMainTable where ContractCode Like'" + textBox7.Text + "'";
-                //OleDbConnection conn = new OleDbConnection(myconnecting);
+            String RequestedFolder = "تقرير التربة";
+            filesPrep(RequestedFolder, sender);
+            //FileUpload(metroButton4, metroButton4.Text, "تقرير التربة");
+            //OpenFileDialog ofdMultiselect = new OpenFileDialog();
+            //ofdMultiselect.Multiselect = true;
+            //ofdMultiselect.Filter = "select needed Files |*.jpg; *.png; *.pdf";
+            //ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //if (ofdMultiselect.ShowDialog() == DialogResult.OK)
+            //{
+            //    string sqlInsertingQuery = "Insert Into " + "ProjectReports" + "(dustReport,ContractCode,recordingdateOnDB)Values('" + metroButton4.Text + "','" + textBox7.Text + "','" + DateTime.Now + "')";
+            //    MultiSelect(metroButton4, metroButton4.Text, "تقرير التربة", ofdMultiselect, "AsBuiltTable", sqlInsertingQuery);
+            //    string selectInBT = "Select COUNT(*) from BuildsMainTable where ContractCode Like'" + textBox7.Text + "'";
+            //    //OleDbConnection conn = new OleDbConnection(myconnecting);
 
-                ////OleDbConnection conn = new OleDbConnection(myconnecting);
-                //DataTable dt32 = new DataTable();
-                ////OleDbCommand OleDbCommand PD = new OleDbCommand (selectInPD, conn);
-                //OleDbCommand OleDbCommand BT = new OleDbCommand (selectInBT, conn);
+            //    ////OleDbConnection conn = new OleDbConnection(myconnecting);
+            //    //DataTable dt32 = new DataTable();
+            //    ////OleDbCommand OleDbCommand PD = new OleDbCommand (selectInPD, conn);
+            //    //OleDbCommand OleDbCommand BT = new OleDbCommand (selectInBT, conn);
 
-                ////OleDbDataAdapter OleDbDataAdapterPD = new OleDbDataAdapter(OleDbCommand PD);
-                //OleDbDataAdapter OleDbDataAdapterBT = new OleDbDataAdapter(OleDbCommand BT);
+            //    ////OleDbDataAdapter OleDbDataAdapterPD = new OleDbDataAdapter(OleDbCommand PD);
+            //    //OleDbDataAdapter OleDbDataAdapterBT = new OleDbDataAdapter(OleDbCommand BT);
 
-                //conn.Open();
-                ////int rowsPD = (int)OleDbCommand PD.ExecuteScalar();
-                //int rowsBT = (int)OleDbCommand BT.ExecuteScalar();
+            //    //conn.Open();
+            //    ////int rowsPD = (int)OleDbCommand PD.ExecuteScalar();
+            //    //int rowsBT = (int)OleDbCommand BT.ExecuteScalar();
 
-                ////if (rowsPD > 0)
-                ////{
-                //if (rowsBT > 0)
-                //{
+            //    ////if (rowsPD > 0)
+            //    ////{
+            //    //if (rowsBT > 0)
+            //    //{
 
-                //    //bd.implementerCompany = "8";
+            //    //    //bd.implementerCompany = "8";
 
-                //    PR.projectName = textBox9.Text;
+            //    //    PR.projectName = textBox9.Text;
 
-                //    PR.ContractCode = textBox7.Text;
-                //    //bd.BUildedDateAndTime = DateTime.Now;
-                //    //PR./*Image*/ = img;
-                //    PR.recordingdateOnDB = DateTime.Now;
-                //    PR.dustReport = metroButton4.Text;
-                //    //bd.Sandreport = textBox5.Text;
+            //    //    PR.ContractCode = textBox7.Text;
+            //    //    //bd.BUildedDateAndTime = DateTime.Now;
+            //    //    //PR./*Image*/ = img;
+            //    //    PR.recordingdateOnDB = DateTime.Now;
+            //    //    PR.dustReport = metroButton4.Text;
+            //    //    //bd.Sandreport = textBox5.Text;
 
-                //bool successPR = PR.Insert(PR);
-                //    if (successPR == true)
-                //    {
-                //        MessageBox.Show("New Dust Report Added");
-                //        clear();
-                //    }
-                //    //else
-                //    //{
-                //    //    MessageBox.Show("Failed to add new Build. Try again");
-                //    //}
-                //    //DataTable dt = bd.Select();
-                //    //dataGridView1.DataSource = dt;
-                //}
-                //else
-                //{
-                //    MessageBox.Show("المنشاء غير مسجلة");
+            //    //bool successPR = PR.Insert(PR);
+            //    //    if (successPR == true)
+            //    //    {
+            //    //        MessageBox.Show("New Dust Report Added");
+            //    //        clear();
+            //    //    }
+            //    //    //else
+            //    //    //{
+            //    //    //    MessageBox.Show("Failed to add new Build. Try again");
+            //    //    //}
+            //    //    //DataTable dt = bd.Select();
+            //    //    //dataGridView1.DataSource = dt;
+            //    //}
+            //    //else
+            //    //{
+            //    //    MessageBox.Show("المنشاء غير مسجلة");
 
-                //}
-                ////}
-                ////else
-                ////{
-                ////    MessageBox.Show("المشروع غير مسجل");
+            //    //}
+            //    ////}
+            //    ////else
+            //    ////{
+            //    ////    MessageBox.Show("المشروع غير مسجل");
 
-                ////}
-                //DataTable dt4 = PR.Select();
-            }
+            //    ////}
+            //    //DataTable dt4 = PR.Select();
+            //}
 
         }
 
         private void metroButton8_Click(object sender, EventArgs e)
         {
 
+
             FileRea(metroButton4.Text, "تقرير التربة");
         }
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton5, metroButton5.Text, "محضر استلام الموقع");
+            String RequestedFolder = "محضر استلام الموقع";
+            filesPrep(RequestedFolder, sender);
+
+            //FileUpload(metroButton5, metroButton5.Text, "محضر استلام الموقع");
         }
 
         private void metroButton9_Click(object sender, EventArgs e)
@@ -774,7 +780,9 @@ namespace Gardinia
 
         private void metroButton6_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton6, metroButton6.Text, "محاضر معاينة قاع الحفر");
+            String RequestedFolder = "محاضر معاينة قاع الحفر";
+            filesPrep(RequestedFolder, sender);
+            //FileUpload(metroButton6, metroButton6.Text, "محاضر معاينة قاع الحفر");
         }
 
         private void metroButton10_Click(object sender, EventArgs e)
@@ -863,7 +871,10 @@ namespace Gardinia
 
         private void metroButton23_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton23, metroButton23.Text, "ملاحظات المشروع");
+
+            String RequestedFolder = "ملاحظات المشروع";
+            filesPrep(RequestedFolder, sender);
+            //FileUpload(metroButton23, metroButton23.Text, "ملاحظات المشروع");
         }
         private void button12_Click(object sender, EventArgs e)
         {
@@ -901,7 +912,6 @@ namespace Gardinia
                 bool successPR = PR.Insert(PR);
                 if (successPR == true)
                 {
-                    MessageBox.Show("New Dust Report Added");
                     clear();
                 }
                 //else
@@ -1043,14 +1053,19 @@ namespace Gardinia
 
         private void metroButton26_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton26, metroButton26.Text, "البرنامج الزمني");
+            String RequestedFolder = "البرنامج الزمني";
+            filesPrep(RequestedFolder, sender);
+
+            //FileUpload(metroButton26, metroButton26.Text, "البرنامج الزمني");
 
         }
 
         private void metroButton27_Click(object sender, EventArgs e)
         {
+            String RequestedFolder = "تفصيل نسبة التنفيذ";
+            filesPrep(RequestedFolder, sender);
 
-            FileUpload(metroButton27, metroButton27.Text, "تفصيل نسبة التنفيذ");
+            //FileUpload(metroButton27, metroButton27.Text, "تفصيل نسبة التنفيذ");
         }
 
         private void metroButton28_Click(object sender, EventArgs e)
@@ -1223,18 +1238,21 @@ namespace Gardinia
         }
         void FileRea(String metroButtonText, string UnValidValue)
         {
-            if (metroButtonText != UnValidValue && metroButtonText != "")
-            {
-                pdf PDF = new pdf(metroButtonText);
-                PDF.ShowDialog();
-            }
+            //if (metroButtonText != UnValidValue && metroButtonText != "")
+            //{
+            //    pdf PDF = new pdf(metroButtonText);
+            //    PDF.ShowDialog();
+            //}
         }
 
 
         private void metroButton30_Click(object sender, EventArgs e)
         {
+
+            String RequestedFolder = "الاخطار";
+            filesPrep(RequestedFolder, sender);
             //FileRea("الاخطار", metroButton30.Text);
-            FileUpload(metroButton30, metroButton30.Text, "الاخطار");
+            //FileUpload(metroButton30, metroButton30.Text, "الاخطار");
 
         }
 
@@ -1245,147 +1263,53 @@ namespace Gardinia
 
         private void metroButton40_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton40, metroButton40.Text, "طلبات الاستلام");
+
+            String RequestedFolder = "طلبات الاستلام";
+            filesPrep(RequestedFolder, sender);
         }
 
         private void metroButton46_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton46, metroButton46.Text, "الاعتمادات المخصصة");
 
+            String RequestedFolder = "الاعتمادات المخصصة";
+            filesPrep(RequestedFolder, sender);
+        
         }
 
         private void metroButton45_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton45, metroButton45.Text, "اوامر الموقع");
+
+            String RequestedFolder = "اوامر الموقع";
+            filesPrep(RequestedFolder, sender);
 
 
         }
 
         private void metroButton44_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton44, metroButton44.Text, "جوابات الادارة");
+            String RequestedFolder = "جوابات الادارة";
+            filesPrep(RequestedFolder, sender);
 
         }
 
         private void metroButton52_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton52, metroButton52.Text, "الميزانية الشبكية");
+            String RequestedFolder = "الميزانية الشبكية";
+            filesPrep(RequestedFolder, sender);
 
         }
 
         private void metroButton51_Click(object sender, EventArgs e)
         {
-            try
-            {
-                OpenFileDialog ofdMultiselect = new OpenFileDialog();
-                ofdMultiselect.Multiselect = true;
-                ofdMultiselect.Filter = "Select needed Files |*.jpg; *.png; *.pdf";
-                ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                if (ofdMultiselect.ShowDialog() == DialogResult.OK)
-                {
-                    string textbox7Text = textBox7.Text;
-                    string FolderName = "صور المشروع";
-                    if (!String.IsNullOrEmpty(textBox7.Text))
-                    {
-                        foreach (string file in ofdMultiselect.FileNames)
-                        {
-
-                            string[] f = file.Split('\\');
-                            string fn = f[(f.Length) - 1];
-                            string path = "";
-                            //@"C:\Users\dell\source\repos\Gardinia\Gardinia
-                            //string subPdfFolder = Directory.GetCurrentDirectory() + "\\pdfsFolder\\";
-                            //string subdirpdf = Directory.GetCurrentDirectory() + "\\pdfsFolder\\" + FolderName;
-                            //string imagesSubFol = Directory.GetCurrentDirectory() + "\\images\\";
-                            //string imagesSubDir = Directory.GetCurrentDirectory() + "\\images\\" + FolderName;
-
-                            string subPdfFolder = ".\\pdfsFolder\\";
-                            string subdirpdf = ".\\pdfsFolder\\" + FolderName;
-                            string imagesSubFol = ".\\images\\";
-                            string imagesSubDir = ".\\images\\" + FolderName;
-
-                            if (Path.GetExtension(fn).ToLower() == ".pdf")
-                            {
-
-                                if (!Directory.Exists(subPdfFolder))
-                                {
-                                    Directory.CreateDirectory(subPdfFolder);
-                                }
-
-                                if (!Directory.Exists(subdirpdf))
-                                {
-                                    Directory.CreateDirectory(subdirpdf);
-                                }
-
-                                if (Directory.GetFiles(subdirpdf, fn,SearchOption.AllDirectories).FirstOrDefault()!=null)
-                                {
-                                    path = String.Format(subPdfFolder + FolderName + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
-                                }
-                                else
-                                {
-                                    path = String.Format(subPdfFolder + FolderName + "\\{0}", fn);
-                                }
-
-                                //MessageBox.Show(f + ",,,,," + fn);
-                                File.Copy(file, path, true);
-                                projectImages.Text = path;
-                                string sqlInsertingQuery = "Insert Into " + "ProjectImages" + "([Image],[ContractCode])Values('" + projectImages.Text + "','" + textbox7Text + "')";
-                                MessageBox.Show(sqlInsertingQuery);
-                                insertMultiData("ProjectImages", projectImages.Text, sqlInsertingQuery);
-                                report3loc = path;
-                            }
-                            else if (ImageExtensions.Contains(Path.GetExtension(fn).ToLower()) || ImageExtensions.Contains(Path.GetExtension(fn)))
-                            {
-                                if (!Directory.Exists(imagesSubFol))
-                                {
-                                    Directory.CreateDirectory(imagesSubFol);
-                                }
-
-                                if (!Directory.Exists(imagesSubDir))
-                                {
-                                    Directory.CreateDirectory(imagesSubDir);
-                                }
-                                if (Directory.GetFiles(imagesSubDir,fn,SearchOption.AllDirectories).FirstOrDefault() != null)
-                                {
-                                    path = String.Format(imagesSubFol + FolderName + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
-                                }
-                                else
-                                {
-                                    path = String.Format(imagesSubFol + FolderName + "\\{0}", fn);
-                                }
-
-                                //path = String.Format(imagesSubFol + FolderName + "\\{0}", fn);
-                                //MessageBox.Show(f + ",,,,," + fn);
-                                File.Copy(file, path, true);
-                                projectImages.Text = path;
-                                string sqlInsertingQuery = "Insert Into " + "ProjectImages" + "([Image],[ContractCode])Values('" + projectImages.Text + "','" + textbox7Text + "')";
-                                //MessageBox.Show(sqlInsertingQuery);
-                                insertMultiData("ProjectImages", projectImages.Text, sqlInsertingQuery);
-                                report3loc = path;
-                            }
-                            else
-                            {
-                                MessageBox.Show("يجب رفع صورة او بي دي اف");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("ادخل رقم العقد");
-                    }
+            
+            String RequestedFolder = "صور المشروع";
+            filesPrep(RequestedFolder, sender);
 
                 }
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
-            }
-        }
-        public void insertMultiData(string tblName, string text, string sqlInsertingQuery)
+        public void insertMultiData(String FilesPaths, string fileCat)
         {
-            string inserting = sqlInsertingQuery;
-            String FilesPaths = "";
-            String FilesCategory = "";
+            
+            String FilesCategory = fileCat;
 
             string insertingMain = "Insert Into ProjectFiles([FilePath],[FileCategory],[ContractCode])Values('" + FilesPaths + "','" + FilesCategory + "','" + textBox7.Text + "')";
 
@@ -1411,7 +1335,7 @@ namespace Gardinia
                     //bd.Sandreport = textBox5.Text;
 
                     //bool successPR = PR.Insert(PR);
-                    OleDbCommand OleDbCommandInsertProjectFiles = new OleDbCommand(inserting, conn);
+                    OleDbCommand OleDbCommandInsertProjectFiles = new OleDbCommand(insertingMain, conn);
                     OleDbDataAdapter OleDbDataAdapterBTPI = new OleDbDataAdapter(OleDbCommandInsertProjectFiles);
                     //MessageBox.Show(OleDbCommandInsertProjectImages.CommandText.ToString());
                     int SCIPI = OleDbCommandInsertProjectFiles.ExecuteNonQuery();
@@ -1445,7 +1369,7 @@ namespace Gardinia
                 //MessageBox.Show(ex.Message, line.ToString());
             }
         }
-        public void MultiSelect(Button metroButtonsMulti, string buttonText, string FolderName, OpenFileDialog ofdMultiselect, string TblName, string sqlInsertingQuery)
+        public void MultiSelect(Button metroButtonsMulti, string FolderName, OpenFileDialog ofdMultiselect)
         {
 
             //string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
@@ -1499,7 +1423,7 @@ namespace Gardinia
                         MessageBox.Show(f + ",,,,," + fn);
                         File.Copy(file, path, true);
                         metroButtonsMulti.Text = path;
-                        insertMultiData(TblName, metroButtonsMulti.Text, sqlInsertingQuery);
+                        insertMultiData(path, FolderName);
                         report3loc = path;
                     }
                     else if (ImageExtensions.Contains(Path.GetExtension(fn).ToLower()) || ImageExtensions.Contains(Path.GetExtension(fn).ToUpper()))
@@ -1530,7 +1454,7 @@ namespace Gardinia
                         //MessageBox.Show(f + ",,,,," + fn);
                         File.Copy(file, path, true);
                         metroButtonsMulti.Text = path;
-                        insertMultiData(TblName, metroButtonsMulti.Text, sqlInsertingQuery);
+                        insertMultiData(path,FolderName);
                         report3loc = path;
                     }
                     else if (ExcelExtensions.Contains(Path.GetExtension(fn).ToLower()) || ExcelExtensions.Contains(Path.GetExtension(fn).ToUpper()))
@@ -1558,6 +1482,7 @@ namespace Gardinia
                             path = String.Format(excelsContractFolder + "\\{0}", fn);
                         }
                         File.Copy(file, path, true);
+                        insertMultiData( path, FolderName);
 
                         report3loc = path;
                         metroButtonsMulti.Text = path;
@@ -1575,59 +1500,85 @@ namespace Gardinia
 
             }
         }
+        public void filesPrep(String FN, Object sender)
+        {
+            try
+            {
+                OpenFileDialog ofdMultiselect = new OpenFileDialog();
+                ofdMultiselect.Multiselect = true;
+                ofdMultiselect.Filter = "Select needed Files |*.jpg; *.png; *.pdf";
+                ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if (ofdMultiselect.ShowDialog() == DialogResult.OK)
+                {
+
+                    string textbox7Text = textBox7.Text;
+                    string FolderName = FN.Trim();
+                    MultiSelect(((Button)sender), FolderName, ofdMultiselect);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+            finally{
+                ((Button)sender).Text = FN;
+            }
+        }
         private void metroButton50_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofdMultiselect = new OpenFileDialog();
-            ofdMultiselect.Multiselect = true;
-            ofdMultiselect.Filter = "Select needed Files |*.jpg; *.png; *.pdf";
-            ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            FileUpload(metroButton50, metroButton50.Text, "تقرير السلامة الانشائية");
-
+            
+            
+            filesPrep("تقرير السلامة الانشائية", sender);
         }
 
         private void metroButton56_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton56, metroButton56.Text, "مذكرات التجاوز و المخفض و الملغى");
+            filesPrep("مذكرات التجاوز و المخفض و الملغى",sender);
 
         }
 
+        
+
+
         private void metroButton54_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofdMultiselect = new OpenFileDialog();
-            ofdMultiselect.Multiselect = true;
-            ofdMultiselect.Filter = "select needed Files |*.jpg; *.png; *.pdf";
-            ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            if (ofdMultiselect.ShowDialog() == DialogResult.OK)
-            {
-                string sqlInsertingQuery = "Insert Into " + "AsBuiltTable" + "(AsBuiltFiles,ContractCode)Values('" + metroButton54.Text + "','" + textBox7.Text + "')";
-                MultiSelect(metroButton54, metroButton54.Text, "لوحات المشروع + Asbuilt", ofdMultiselect, "AsBuiltTable", sqlInsertingQuery);
-
-            }
+           filesPrep(((Button)sender).Text,sender);
 
         }
 
         private void metroButton32_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton32, metroButton32.Text, "القيمة التعاقدية");
+            String RequestedFolder = "القيمة التعاقدية";
+
+            //FileUpload(metroButton32, metroButton32.Text, );
+            filesPrep(RequestedFolder, sender);
 
         }
 
         private void metroButton38_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton38, metroButton38.Text, "الختامي المنتظر");
+            String RequestedFolder = "الختامي المنتظر";
+            //FileUpload(metroButton38, metroButton38.Text, "الختامي المنتظر");
+            filesPrep(RequestedFolder, sender);
 
         }
 
         private void metroButton37_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton37, metroButton37.Text, "اخرمستخلص");
+            String RequestedFolder = "اخرمستخلص";
+
+            //FileUpload(metroButton37, metroButton37.Text, );
+            filesPrep(RequestedFolder, sender);
 
         }
 
         private void metroButton36_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton36, metroButton36.Text, "الوفر");
+            String RequestedFolder = "الوفر";
+
+            //FileUpload(metroButton36, metroButton36.Text, "الوفر");
+            filesPrep(RequestedFolder, sender);
 
         }
 
