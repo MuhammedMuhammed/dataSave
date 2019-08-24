@@ -25,6 +25,7 @@ namespace Gardinia
         {
             OleDbConnection conn = new OleDbConnection(myconnecting);
 
+            
             try
             {
                 string query = "select * from [users] where [UserName]='" + textBox1.Text + "'";
@@ -68,12 +69,12 @@ namespace Gardinia
             }
             catch (Exception ex)
             {
-                //var st = new StackTrace(ex, true);
-                //// Get the top stack frame
-                //var frame = st.GetFrame(st.FrameCount - 1);
-                //// Get the line number from the stack frame
-                //var line = frame.GetFileLineNumber();
-                //MessageBox.Show(ex.Message, line.ToString());
+                var st = new StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(st.FrameCount - 1);
+                // Get the line number from the stack frame
+                var line = frame.GetFileLineNumber();
+                MessageBox.Show(ex.Message, line.ToString());
             }
             finally {
                 conn.Close();
@@ -98,6 +99,15 @@ namespace Gardinia
             {
                 SelectNextControl(ActiveControl, true, true, true, true);
             }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //string isAdmin = String.IsNullOrEmpty(dr["Admin"].ToString()) ? null : dr["Admin"].ToString();
+            home h = new home();
+            this.Hide();
+            h.Show();
+
         }
     }
 }

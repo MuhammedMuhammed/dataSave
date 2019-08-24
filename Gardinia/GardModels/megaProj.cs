@@ -138,12 +138,15 @@ namespace Gardinia.GardModels
             bool isSuccess = false;
             try
             {
-                string queryInsert = "Insert Into [megaProject] ([megaProjectName],[megaProjectFundemental],[noOfPhrases])Values('" + PDS.megaProjectName + "','" + PDS.megaProjectFundemental + "','" + PDS.noOfPhrases + "')";
+                string queryInsert = "Insert Into [megaProject] ([megaProjectName],[megaProjectFundemental],[noOfPhrases])Values(?,?,?)";
                 OleDbConnection OleDbConnection = new OleDbConnection(connector);
-                OleDbCommand OleDbCommand = new OleDbCommand (queryInsert, OleDbConnection);
-                OleDbDataAdapter OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand );
+                OleDbCommand OleDbCommandS = new OleDbCommand (queryInsert, OleDbConnection);
+                OleDbCommandS.Parameters.Add("@Param1", PDS.megaProjectName);
+                OleDbCommandS.Parameters.Add("@Param2", PDS.megaProjectFundemental);
+                OleDbCommandS.Parameters.Add("@Param3", PDS.noOfPhrases);
+                OleDbDataAdapter OleDbDataAdapter = new OleDbDataAdapter(OleDbCommandS);
                 OleDbConnection.Open();
-                int exec = OleDbCommand .ExecuteNonQuery();
+                int exec = OleDbCommandS.ExecuteNonQuery();
                 if (exec > 0)
                 {
                     isSuccess = true;

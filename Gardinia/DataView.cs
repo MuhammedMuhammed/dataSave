@@ -126,6 +126,7 @@ namespace Gardinia
             string[] BuildstextBoxesTexts = new string[] { textBox3.Text, textBox7.Text, pdfloc };
             string[] projectsTexts = new string[] { textBox5.Text, textBox8.Text, textBox12.Text };
             string[] projectsButton = new string[] { metroButton3.Text, metroButton4.Text, metroButton5.Text, metroButton6.Text };
+            
             if (imgloc != null && imgloc != "")
             {
                 FileStream fs = new FileStream(imgloc, FileMode.Open, FileAccess.Read);
@@ -411,7 +412,7 @@ namespace Gardinia
                 bd.ProjectDataTypes = metroComboBox1.Text == "" ? null : metroComboBox1.Text;
                 bd.projectImages = projectImages.Text == "صور المشروع" || projectImages.Text == "" ? null : projectImages.Text;
                 bd.TotalDeductionsValues = textBox24.Text == "" || textBox24.Text == null ? 0.0 : (double?)double.Parse(textBox24.Text);
-                bd.PhraseID = PT.selectID(Sessions.SessionData.megaProjectName, (String.IsNullOrEmpty(BuildPhrases.Text) ? null : BuildPhrases.Text));
+                bd.PhraseID =String.IsNullOrEmpty(BuildPhrases.Text) ? null :(int?) PT.selectID(Sessions.SessionData.megaProjectName, (String.IsNullOrEmpty(BuildPhrases.Text) ? null : BuildPhrases.Text));
 
                 bool success = bd.Update(bd);
                 if (success == true)
@@ -432,7 +433,7 @@ namespace Gardinia
                 this.Refresh();
             }
             catch (Exception ex) {
-                  
+                MessageBox.Show(ex.Message);      
             }
             //if (metroGrid1.Rows.Count > 0)
             //{
@@ -1054,8 +1055,14 @@ namespace Gardinia
 
         private void metroButton28_Click(object sender, EventArgs e)
         {
-            FileRea(metroButton27.Text, "تفصيل نسبة التنفيذ");
-        }
+            try
+            {
+                FileRea(metroButton27.Text, "تفصيل نسبة التنفيذ");
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            }
 
         internal void FileUpload(Button metroButtons, string btnText, string FolderName)
         {
@@ -1069,121 +1076,147 @@ namespace Gardinia
 
             if (result == DialogResult.OK)
             {
-                string file = PDFUPLOADS.FileName;
-                
-
-                string[] f = file.Split('\\');
-                string fn = f[(f.Length) - 1];
-                string path = "";
-                //@"C:\Users\dell\source\repos\Gardinia\Gardinia
-                //string subPdfFolder = Directory.GetCurrentDirectory() + "\\pdfsFolder\\";
-                //string subdirpdf = Directory.GetCurrentDirectory() + "\\pdfsFolder\\" + FolderName;
-                //string imagesSubFol = Directory.GetCurrentDirectory() + "\\images\\";
-                //string imagesSubDir = Directory.GetCurrentDirectory() + "\\images\\" + FolderName;
-                string subPdfFolder = ".\\pdfsFolder\\";
-                string subdirpdf = ".\\pdfsFolder\\" + FolderName;
-                string imagesSubFol = ".\\images\\";
-                string imagesSubDir = ".\\images\\" + FolderName;
-                string ExcelParentFolder = ".\\Excel\\";
-                string ExcelSubFolder = ".\\Excel\\" + FolderName;
-
-                try
+                if (!(String.IsNullOrEmpty(textBox7.Text) || String.IsNullOrWhiteSpace(textBox7.Text)))
                 {
-                    if (Path.GetExtension(fn).ToLower() == ".pdf" || Path.GetExtension(fn).ToUpper() == ".pdf")
+                    string file = PDFUPLOADS.FileName;
+
+
+                    string[] f = file.Split('\\');
+                    string fn = f[(f.Length) - 1];
+                    string path = "";
+                    //@"C:\Users\dell\source\repos\Gardinia\Gardinia
+                    //string subPdfFolder = Directory.GetCurrentDirectory() + "\\pdfsFolder\\";
+                    //string subdirpdf = Directory.GetCurrentDirectory() + "\\pdfsFolder\\" + FolderName;
+                    //string imagesSubFol = Directory.GetCurrentDirectory() + "\\images\\";
+                    //string imagesSubDir = Directory.GetCurrentDirectory() + "\\images\\" + FolderName;
+                    string subPdfFolder = ".\\pdfsFolder\\";
+                    string subdirpdf = ".\\pdfsFolder\\" + FolderName;
+                    string PDFSContractFolder = ".\\pdfsFolder\\" + FolderName +"\\"+ textBox7.Text;
+
+                    string imagesSubFol = ".\\images\\";
+                    string imagesSubDir = ".\\images\\" + FolderName;
+                    string imagesContractFolder = ".\\images\\" + FolderName + "\\" + textBox7.Text;
+
+                    string ExcelParentFolder = ".\\Excel\\";
+                    string ExcelSubFolder = ".\\Excel\\" + FolderName;
+                    string excelsContractFolder = ".\\Excel\\" + FolderName + "\\" + textBox7.Text;
+
+                    try
                     {
+                        if (Path.GetExtension(fn).ToLower() == ".pdf" || Path.GetExtension(fn).ToUpper() == ".pdf")
+                        {
 
-                        if (!Directory.Exists(subPdfFolder))
-                        {
-                            Directory.CreateDirectory(subPdfFolder);
-                        }
+                            if (!Directory.Exists(subPdfFolder))
+                            {
+                                Directory.CreateDirectory(subPdfFolder);
+                            }
 
-                        if (!Directory.Exists(subdirpdf))
-                        {
-                            Directory.CreateDirectory(subdirpdf);
-                        }
-                    
-                        if (Directory.GetFiles(subdirpdf, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
-                        {
+                            if (!Directory.Exists(subdirpdf))
+                            {
+                                Directory.CreateDirectory(subdirpdf);
+                            }
+                            if (!Directory.Exists(PDFSContractFolder))
+                            {
+                                Directory.CreateDirectory(PDFSContractFolder);
+                            }
+
+
+                            if (Directory.GetFiles(PDFSContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
+                            {
                                 MessageBox.Show(file);
                                 MessageBox.Show(fn);
 
-                                path = String.Format(subPdfFolder + FolderName + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
-                        }
-                        else
-                        {
-                            path = String.Format(subPdfFolder + FolderName + "\\{0}", fn);
-                        }
-                        MessageBox.Show(f + "سيتم رفع الفايل" + fn);
-                        File.Copy(file, path, true);
+                                path = String.Format(PDFSContractFolder + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
+                            }
+                            else
+                            {
+                                path = String.Format(subPdfFolder + FolderName + "\\" + textBox7.Text + "\\{0}", fn);
+                            }
+                            MessageBox.Show(f + "سيتم رفع الفايل" + fn);
+                            File.Copy(file, path, true);
 
-                        report3loc = path;
-                        metroButtons.Text = path;
-                    }
-                    else if (ImageExtensions.Contains(Path.GetExtension(fn).ToLower()) || ImageExtensions.Contains(Path.GetExtension(fn).ToUpper()))
-                    {
-                        if (!Directory.Exists(imagesSubFol))
-                        {
-                            Directory.CreateDirectory(imagesSubFol);
+                            report3loc = path;
+                            metroButtons.Text = path;
                         }
+                        else if (ImageExtensions.Contains(Path.GetExtension(fn).ToLower()) || ImageExtensions.Contains(Path.GetExtension(fn).ToUpper()))
+                        {
+                            if (!Directory.Exists(imagesSubFol))
+                            {
+                                Directory.CreateDirectory(imagesSubFol);
+                            }
 
-                        if (!Directory.Exists(imagesSubDir))
-                        {
-                            Directory.CreateDirectory(imagesSubDir);
-                        }
-                        if (Directory.GetFiles(imagesSubDir, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
-                        {
+                            if (!Directory.Exists(imagesSubDir))
+                            {
+                                Directory.CreateDirectory(imagesSubDir);
+                            }
+                            if (!Directory.Exists(imagesContractFolder))
+                            {
+                                Directory.CreateDirectory(imagesContractFolder);
+                            }
+                            if (Directory.GetFiles(imagesContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
+                            {
                                 MessageBox.Show(file);
-                            path = String.Format(imagesSubFol + FolderName + "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
+                                path = String.Format(imagesSubFol + FolderName +"\\"+ textBox7.Text+ "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
+                            }
+                            else
+                            {
+                                path = String.Format(imagesSubFol + FolderName + "\\" + textBox7.Text + "\\{0}", fn);
+                            }
+                            MessageBox.Show(f + "سيتم رفع الفايل" + fn);
+
+                            File.Copy(file, path, true);
+
+                            report3loc = path;
+                            metroButtons.Text = path;
+                        }
+                        else if (ExcelExtensions.Contains(Path.GetExtension(fn).ToLower()) || ExcelExtensions.Contains(Path.GetExtension(fn).ToUpper()))
+                        {
+                            if (!Directory.Exists(ExcelParentFolder))
+                            {
+                                Directory.CreateDirectory(ExcelParentFolder);
+                            }
+
+                            if (!Directory.Exists(ExcelSubFolder))
+                            {
+                                Directory.CreateDirectory(ExcelSubFolder);
+                            }
+                            if (!Directory.Exists(excelsContractFolder))
+                            {
+                                Directory.CreateDirectory(excelsContractFolder);
+                            }
+                            if (Directory.GetFiles(excelsContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
+                            {
+                                MessageBox.Show(file);
+                                path = String.Format(ExcelParentFolder + FolderName + "\\" + textBox7.Text + "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("dddd_MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
+                            }
+                            else
+                            {
+                                path = String.Format(ExcelParentFolder + FolderName + "\\" + textBox7.Text + "\\{0}", fn);
+                            }
+                            MessageBox.Show(f + "سيتم رفع الفايل" + fn);
+                            File.Copy(file, path, true);
+
+                            report3loc = path;
+                            metroButtons.Text = path;
                         }
                         else
                         {
-                            path = String.Format(imagesSubFol + FolderName + "\\{0}", fn);
+                            MessageBox.Show("يجب رفع صورة او بي دي اف او اكسل");
                         }
-                        MessageBox.Show(f + "سيتم رفع الفايل" + fn);
 
-                        File.Copy(file, path, true);
-
-                        report3loc = path;
-                        metroButtons.Text = path;
                     }
-                    else if (ExcelExtensions.Contains(Path.GetExtension(fn).ToLower()) || ExcelExtensions.Contains(Path.GetExtension(fn).ToUpper()))
+                    catch (Exception ex)
                     {
-                        if (!Directory.Exists(ExcelParentFolder))
-                        {
-                            Directory.CreateDirectory(ExcelParentFolder);
-                        }
-
-                        if (!Directory.Exists(ExcelSubFolder))
-                        {
-                            Directory.CreateDirectory(ExcelSubFolder);
-                        }
-                        if (Directory.GetFiles(ExcelSubFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
-                        {
-                            MessageBox.Show(file);
-                            path = String.Format(ExcelParentFolder + FolderName + "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("dddd_MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
-                        }
-                        else
-                        {
-                            path = String.Format(ExcelParentFolder + FolderName + "\\{0}", fn);
-                        }
-                        MessageBox.Show(f + "سيتم رفع الفايل" + fn);
-                        File.Copy(file, path, true);
-                        
-                        report3loc = path;
-                        metroButtons.Text = path;
+                        var st = new StackTrace(ex, true);
+                        // Get the top stack frame
+                        var frame = st.GetFrame(st.FrameCount - 1);
+                        // Get the line number from the stack frame
+                        var line = frame.GetFileLineNumber();
+                        MessageBox.Show(ex.Message);
                     }
-                    else
-                {
-                    MessageBox.Show("يجب رفع صورة او بي دي اف او اكسل");
                 }
-                }
-                catch (Exception ex) {
-                    //var st = new StackTrace(ex, true);
-                    //// Get the top stack frame
-                    //var frame = st.GetFrame(st.FrameCount - 1);
-                    //// Get the line number from the stack frame
-                    //var line = frame.GetFileLineNumber();
-                    //MessageBox.Show(ex.Message);
+                else {
+                    MessageBox.Show("ادخل رقم العقد");
                 }
             }
                  
@@ -1351,6 +1384,11 @@ namespace Gardinia
         public void insertMultiData(string tblName, string text, string sqlInsertingQuery)
         {
             string inserting = sqlInsertingQuery;
+            String FilesPaths = "";
+            String FilesCategory = "";
+
+            string insertingMain = "Insert Into ProjectFiles([FilePath],[FileCategory],[ContractCode])Values('" + FilesPaths + "','" + FilesCategory + "','" + textBox7.Text + "')";
+
             /*"Insert Into "+ tblName+ "(AsbuiltFiles,ContractCode)Values('" + text + "','" + textBox7.Text + "')"*/
             try
             {
@@ -1373,10 +1411,10 @@ namespace Gardinia
                     //bd.Sandreport = textBox5.Text;
 
                     //bool successPR = PR.Insert(PR);
-                    OleDbCommand OleDbCommandInsertProjectImages = new OleDbCommand(inserting, conn);
-                    OleDbDataAdapter OleDbDataAdapterBTPI = new OleDbDataAdapter(OleDbCommandInsertProjectImages);
-                    MessageBox.Show(OleDbCommandInsertProjectImages.CommandText.ToString());
-                    int SCIPI = OleDbCommandInsertProjectImages.ExecuteNonQuery();
+                    OleDbCommand OleDbCommandInsertProjectFiles = new OleDbCommand(inserting, conn);
+                    OleDbDataAdapter OleDbDataAdapterBTPI = new OleDbDataAdapter(OleDbCommandInsertProjectFiles);
+                    //MessageBox.Show(OleDbCommandInsertProjectImages.CommandText.ToString());
+                    int SCIPI = OleDbCommandInsertProjectFiles.ExecuteNonQuery();
 
                     if (SCIPI > 0)
                     {
@@ -1422,8 +1460,16 @@ namespace Gardinia
                     //@"C:\Users\dell\source\repos\Gardinia\Gardinia
                     string subPdfFolder = Directory.GetCurrentDirectory() + "\\pdfsFolder\\";
                     string subdirpdf = Directory.GetCurrentDirectory() + "\\pdfsFolder\\" + FolderName;
+                    string PDFSContractFolder = ".\\pdfsFolder\\" + FolderName + "\\" + textBox7.Text;
+
+
                     string imagesSubFol = Directory.GetCurrentDirectory() + "\\images\\";
                     string imagesSubDir = Directory.GetCurrentDirectory() + "\\images\\" + FolderName;
+                    string imagesContractFolder = ".\\images\\" + FolderName + "\\" + textBox7.Text;
+
+                    string ExcelParentFolder = ".\\Excel\\";
+                    string ExcelSubFolder = ".\\Excel\\" + FolderName;
+                    string excelsContractFolder = ".\\Excel\\" + FolderName + "\\" + textBox7.Text;
 
                     if (Path.GetExtension(fn).ToLower() == ".pdf")
                     {
@@ -1437,13 +1483,17 @@ namespace Gardinia
                         {
                             Directory.CreateDirectory(subdirpdf);
                         }
-                        if (Directory.GetFiles(subdirpdf,fn,SearchOption.AllDirectories).FirstOrDefault()!= null)
+                        if (!Directory.Exists(PDFSContractFolder))
                         {
-                            path = String.Format(subPdfFolder + FolderName + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
+                            Directory.CreateDirectory(PDFSContractFolder);
+                        }
+                        if (Directory.GetFiles(PDFSContractFolder, fn,SearchOption.AllDirectories).FirstOrDefault()!= null)
+                        {
+                            path = String.Format(PDFSContractFolder + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
                         }
                         else
                         {
-                            path = String.Format(subPdfFolder + FolderName + "\\{0}", fn);
+                            path = String.Format(PDFSContractFolder + "\\{0}", fn);
                         }
 
                         MessageBox.Show(f + ",,,,," + fn);
@@ -1463,25 +1513,59 @@ namespace Gardinia
                         {
                             Directory.CreateDirectory(imagesSubDir);
                         }
-                        if (Directory.GetFiles(imagesSubDir,fn,SearchOption.AllDirectories).FirstOrDefault()!= null)
+                        if (!Directory.Exists(imagesContractFolder))
                         {
-                            path = String.Format(imagesSubFol + FolderName + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
+                            Directory.CreateDirectory(imagesContractFolder);
+                        }
+
+                        if (Directory.GetFiles(imagesContractFolder, fn,SearchOption.AllDirectories).FirstOrDefault()!= null)
+                        {
+                            path = String.Format(imagesContractFolder + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
                         }
                         else
                         {
-                            path = String.Format(imagesSubFol + FolderName + "\\{0}", fn);
+                            path = String.Format(imagesContractFolder + "\\{0}", fn);
                         }
 
-                        path = String.Format(imagesSubFol + FolderName + "\\{0}", fn);
                         //MessageBox.Show(f + ",,,,," + fn);
                         File.Copy(file, path, true);
                         metroButtonsMulti.Text = path;
                         insertMultiData(TblName, metroButtonsMulti.Text, sqlInsertingQuery);
                         report3loc = path;
                     }
+                    else if (ExcelExtensions.Contains(Path.GetExtension(fn).ToLower()) || ExcelExtensions.Contains(Path.GetExtension(fn).ToUpper()))
+                    {
+                        if (!Directory.Exists(ExcelParentFolder))
+                        {
+                            Directory.CreateDirectory(ExcelParentFolder);
+                        }
+
+                        if (!Directory.Exists(ExcelSubFolder))
+                        {
+                            Directory.CreateDirectory(ExcelSubFolder);
+                        }
+                        if (!Directory.Exists(excelsContractFolder))
+                        {
+                            Directory.CreateDirectory(excelsContractFolder);
+                        }
+                        if (Directory.GetFiles(excelsContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
+                        {
+                            MessageBox.Show(file);
+                            path = String.Format(excelsContractFolder + "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("dddd_MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
+                        }
+                        else
+                        {
+                            path = String.Format(excelsContractFolder + "\\{0}", fn);
+                        }
+                        File.Copy(file, path, true);
+
+                        report3loc = path;
+                        metroButtonsMulti.Text = path;
+                    }
+
                     else
                     {
-                        MessageBox.Show("يجب رفع صورة او بي دي اف");
+                        MessageBox.Show("يجب رفع صورة او بي دي اف او اكسل");
                     }
                 }
             }
@@ -1493,6 +1577,11 @@ namespace Gardinia
         }
         private void metroButton50_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofdMultiselect = new OpenFileDialog();
+            ofdMultiselect.Multiselect = true;
+            ofdMultiselect.Filter = "Select needed Files |*.jpg; *.png; *.pdf";
+            ofdMultiselect.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
             FileUpload(metroButton50, metroButton50.Text, "تقرير السلامة الانشائية");
 
         }

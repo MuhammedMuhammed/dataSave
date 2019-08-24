@@ -49,14 +49,10 @@ namespace Gardinia
                 if (!String.IsNullOrEmpty(megaProjectName.Text))
                 {
 
-                    if (!String.IsNullOrEmpty(megaProjectFundemental.Text))
-                    {
 
-                        if (!String.IsNullOrEmpty(megaProjectFundemental.Text))
-                        {
                             mP.megaProjectName = megaProjectName.Text;
-                            mP.megaProjectFundemental = megaProjectFundemental.Text == "" ? null : (double?)double.Parse(megaProjectFundemental.Text);
-                            mP.noOfPhrases = String.IsNullOrEmpty(megaProjectFundemental.Text) || String.IsNullOrWhiteSpace(megaProjectFundemental.Text) ? 1 : int.Parse(noOfPhrases.Text);
+                            mP.megaProjectFundemental = String.IsNullOrEmpty(megaProjectFundemental.Text) || String.IsNullOrWhiteSpace(megaProjectFundemental.Text) ? 0.0 : (double?)double.Parse(megaProjectFundemental.Text);
+                            mP.noOfPhrases = String.IsNullOrEmpty(noOfPhrases.Text) || String.IsNullOrWhiteSpace(noOfPhrases.Text) ? 0 : int.Parse(noOfPhrases.Text);
                             bool success = mP.insertData(mP);
                             if (success)
                             {
@@ -68,18 +64,7 @@ namespace Gardinia
                             else {
                                 MessageBox.Show("Failed To Add Data");
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("ادخل عددالمراحل");
-
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("ادخل ميزانية المشروع");
-
-                    }
+                    
 
 
                 }
@@ -89,7 +74,7 @@ namespace Gardinia
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
 

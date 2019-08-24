@@ -185,6 +185,7 @@ namespace Gardinia
             this.label2.Size = new System.Drawing.Size(66, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Build Code";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // panel1
             // 
@@ -698,15 +699,11 @@ namespace Gardinia
             // 
             // BuildPhrases
             // 
-            this.BuildPhrases.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.BuildPhrases.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.BuildPhrases.DisplayMember = "1";
             this.BuildPhrases.FormattingEnabled = true;
             this.BuildPhrases.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BuildPhrases.ItemHeight = 23;
-            this.BuildPhrases.Items.AddRange(new object[] {
-            "الشبكات",
-            "المنشاءات",
-            "الاعمال التخصصية"});
             this.BuildPhrases.Location = new System.Drawing.Point(852, 63);
             this.BuildPhrases.Name = "BuildPhrases";
             this.BuildPhrases.Size = new System.Drawing.Size(115, 29);
@@ -959,7 +956,7 @@ namespace Gardinia
             this.metroDateTime1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.metroDateTime1.FontSize = MetroFramework.MetroDateTimeSize.Small;
             this.metroDateTime1.Location = new System.Drawing.Point(613, 236);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 25);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 25);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(145, 25);
             this.metroDateTime1.Style = MetroFramework.MetroColorStyle.White;

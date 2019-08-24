@@ -777,7 +777,7 @@ namespace Gardinia.GardModels
             {
                 string sql = "DELETE FROM BuildsMainTable where ContractCode=@ContractCode";
                 OleDbCommand OleDbCommand = new OleDbCommand (sql, conn);
-                OleDbCommand .Parameters.AddWithValue("@ContractCode", bd.ContractCode);
+                OleDbCommand.Parameters.AddWithValue("@ContractCode", bd.ContractCode);
 
                 conn.Open();
                 int rows = OleDbCommand .ExecuteNonQuery();
@@ -791,7 +791,10 @@ namespace Gardinia.GardModels
                 }
             }
             catch (Exception ex)
-            { }
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             finally
             {
                 conn.Close();

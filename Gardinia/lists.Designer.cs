@@ -54,12 +54,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(788, 490);
             this.dataGridView1.TabIndex = 62;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
             // Update
             // 
             this.Update.FlatAppearance.BorderSize = 0;
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Update.Location = new System.Drawing.Point(12, 455);
+            this.Update.Location = new System.Drawing.Point(12, 456);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(75, 23);
             this.Update.TabIndex = 63;

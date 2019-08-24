@@ -54,7 +54,7 @@ namespace Gardinia
                 metroComboBox1.Visible = true;
                 metroGrid1.Visible = true;
                 metroLabel1.Visible = true;
-                axAcroPDF1.Visible = false;
+                //// axAcroPDF1.Visible = false;
 
                 pictureBox1.Visible = false;
 
@@ -88,10 +88,16 @@ namespace Gardinia
             {
                 if (Path.GetExtension(listBox1.SelectedItem.ToString()).ToLower() == ".pdf")
                 {
-                    axAcroPDF1.src = listBox1.SelectedItem.ToString().ToLower();
-                    axAcroPDF1.Dock = DockStyle.Fill;
-                    axAcroPDF1.Visible = true;
-                    Process.Start(listBox1.SelectedItem.ToString().ToLower());
+                    pdfViewer1.LoadFromFile(listBox1.SelectedItem.ToString().ToLower());
+                    //// axAcroPDF1.src = listBox1.SelectedItem.ToString().ToLower();
+                    pdfViewer1.Dock = DockStyle.Fill;
+                    
+                    pdfViewer1.Visible = true;
+                    
+                    pdfViewer1.SetViewerMode(Spire.PdfViewer.Forms.PdfViewerMode.PdfViewerMode.Auto); 
+                    //PictureBox p;
+                    
+                    //Process.Start(listBox1.SelectedItem.ToString().ToLower());
 
                     metroComboBox1.Visible = false;
                     metroGrid1.Visible = false;
@@ -104,7 +110,7 @@ namespace Gardinia
                     pictureBox1.Image = new Bitmap(listBox1.SelectedItem.ToString());
                     pictureBox1.Dock = DockStyle.Fill;
                     pictureBox1.Visible = true;
-                    axAcroPDF1.Visible = false;
+                    pdfViewer1.Visible = false;
                     metroComboBox1.Visible = false;
                     metroGrid1.Visible = false;
                     metroLabel1.Visible = false;
