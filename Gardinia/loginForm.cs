@@ -18,6 +18,9 @@ namespace Gardinia
         public loginForm()
         {
             InitializeComponent();
+            textBox1.Select();
+            this.MaximizeBox = false;
+
         }
         static string myconnecting = "Provider=Microsoft.ACE.OleDb.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\ArchDB.accdb;Persist Security Info=false";
     
@@ -45,10 +48,7 @@ namespace Gardinia
                         Sessions.SessionData.isAdmin = isAdmin;
 
                         Sessions.SessionData.UserName = textBox1.Text;
-                        MessageBox.Show("Login Successful");
-                        MessageBox.Show(isAdmin);
-                        MessageBox.Show(Sessions.SessionData.UserName);
-
+                        MessageBox.Show("Login Successful","login",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                         home h = new home();
                         this.Hide();
                         h.Show();
@@ -109,5 +109,24 @@ namespace Gardinia
             h.Show();
 
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirm user wants to close
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Application.ExitThread();
+                    Application.Exit();
+                    break;
+            }
+        }
+
     }
 }

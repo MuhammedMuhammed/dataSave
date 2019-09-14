@@ -86,7 +86,6 @@ namespace Gardinia.GardModels
                 var line = frame.GetFileLineNumber();
                 MessageBox.Show(ex.Message, line.ToString());
 
-                MessageBox.Show(ex.Message);
             }
             return DS;
         }

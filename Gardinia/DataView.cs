@@ -53,6 +53,7 @@ namespace Gardinia
                     }
                 }
             }
+            this.MaximizeBox = false;
         }
         private bool datechanged = false;
         private bool datechanged2 = false;
@@ -654,26 +655,26 @@ namespace Gardinia
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton1, metroButton1.Text, "حصر المشروع");
+            filesPrep(((Button)sender).Text, sender);
+
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            if (metroButton1.Text != "حصر المشروع" && metroButton1.Text != "")
-            {
-                Excel excel = new Excel(metroButton1.Text);
-                excel.Show();
-            }
+            //if (metroButton1.Text != "حصر المشروع" && metroButton1.Text != "")
+            //{
+            //    Excel excel = new Excel(metroButton1.Text);
+            //    excel.Show();
+            //}
         }
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            FileUpload(metroButton3, metroButton3.Text, "مقايسة المشروع");
+            filesPrep(((Button)sender).Text, sender);
         }
         private void metroButton7_Click(object sender, EventArgs e)
         {
             FileRea(metroButton3.Text, "مقايسة المشروع");
         }
-
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
@@ -752,7 +753,7 @@ namespace Gardinia
         {
 
 
-            FileRea(metroButton4.Text, "تقرير التربة");
+            //FileRea(metroButton4.Text, "تقرير التربة");
         }
 
         private void metroButton5_Click(object sender, EventArgs e)
@@ -1048,7 +1049,7 @@ namespace Gardinia
 
         private void metroButton24_Click(object sender, EventArgs e)
         {
-            FileRea(metroButton3.Text, "ملاحظات المشروع");
+            //FileRea(metroButton3.Text, "ملاحظات المشروع");
         }
 
         private void metroButton26_Click(object sender, EventArgs e)
@@ -1062,17 +1063,17 @@ namespace Gardinia
 
         private void metroButton27_Click(object sender, EventArgs e)
         {
-            String RequestedFolder = "تفصيل نسبة التنفيذ";
+            String RequestedFolder = "الموقف التنفيذي للموقع";
             filesPrep(RequestedFolder, sender);
 
-            //FileUpload(metroButton27, metroButton27.Text, "تفصيل نسبة التنفيذ");
+            //FileUpload(metroButton27, metroButton27.Text, "الموقف التنفيذي للموقع");
         }
 
         private void metroButton28_Click(object sender, EventArgs e)
         {
             try
             {
-                FileRea(metroButton27.Text, "تفصيل نسبة التنفيذ");
+                FileRea(metroButton27.Text, "الموقف التنفيذي للموقع");
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -1904,7 +1905,7 @@ namespace Gardinia
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             home h = new home();
-            this.Close();
+            this.Hide();
             Sessions.SessionData.megaProjectName.Equals(null);
             h.Show();
 
@@ -2271,7 +2272,24 @@ namespace Gardinia
 
             }
         }
-        
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirm user wants to close
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Application.ExitThread();
+                    Application.Exit();
+                    break;
+            }
+        }
     }
 }
 //string userName = Environment.UserName;

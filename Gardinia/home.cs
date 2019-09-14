@@ -25,7 +25,10 @@ namespace Gardinia
                 Add.Enabled = false;
                 button1.Enabled = false;
                 button2.Enabled = false;
+               
             }
+            this.MaximizeBox = false;
+
         }
         static string connector = @"Provider=Microsoft.ACE.OleDb.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\ArchDB.accdb;Persist Security Info=false";
         megaProj mP = new megaProj();
@@ -83,7 +86,8 @@ namespace Gardinia
 
             //if (!String.IsNullOrEmpty(megaProjectName.Text))
             //{
-                bool succeed = mP.selectDataCount(listBox1.SelectedItem.ToString());
+            if (listBox1.SelectedItems.Count > 0) { 
+            bool succeed = mP.selectDataCount(listBox1.SelectedItem.ToString());
                 if (succeed) 
                 {
                     Sessions.SessionData.megaProjectName = listBox1.SelectedItem.ToString();
@@ -94,7 +98,12 @@ namespace Gardinia
                 else {
                     MessageBox.Show("المشروع غير متواجد");
                 }
+            }
+            else
+            {
+                MessageBox.Show("يجب اختيار مشروع");
 
+            }
 
             //}
             //else
@@ -138,6 +147,14 @@ namespace Gardinia
         private void home_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Sessions.SessionData.UserName=null;
+            loginForm lf = new loginForm();
+            lf.Show();
         }
     }
 }

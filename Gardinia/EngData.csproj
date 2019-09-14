@@ -331,6 +331,7 @@
     <None Include="Resources\like-symbol-for-interface-of-black-hand-shape-with-thumb-up.png" />
     <Content Include="Resources\GaS.ico" />
     <Content Include="OneDrive.ico" />
+    <None Include="Resources\logout.png" />
     <Content Include="script.sql" />
     <None Include="Resources\icons8-undo-24.png" />
   </ItemGroup>

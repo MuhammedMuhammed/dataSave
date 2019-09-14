@@ -336,7 +336,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
@@ -355,7 +354,6 @@
             this.metroTabPage6.SuspendLayout();
             this.metroTabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -731,7 +729,7 @@
             this.metroGrid2.EnableHeadersVisualStyles = false;
             this.metroGrid2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid2.Location = new System.Drawing.Point(-70, 491);
+            this.metroGrid2.Location = new System.Drawing.Point(-63, 551);
             this.metroGrid2.MinimumSize = new System.Drawing.Size(0, 400);
             this.metroGrid2.Name = "metroGrid2";
             this.metroGrid2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1714,7 +1712,7 @@
             this.metroButton27.Name = "metroButton27";
             this.metroButton27.Size = new System.Drawing.Size(175, 23);
             this.metroButton27.TabIndex = 107;
-            this.metroButton27.Text = "تفصيل نسبة التنفيذ";
+            this.metroButton27.Text = "الموقف التنفيذي للموقع";
             this.metroButton27.UseSelectable = true;
             this.metroButton27.Click += new System.EventHandler(this.metroButton27_Click);
             // 
@@ -2045,7 +2043,7 @@
             this.metroDateTime1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.metroDateTime1.FontSize = MetroFramework.MetroDateTimeSize.Small;
             this.metroDateTime1.Location = new System.Drawing.Point(691, 257);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 25);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 25);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(145, 25);
             this.metroDateTime1.Style = MetroFramework.MetroColorStyle.White;
@@ -2130,7 +2128,7 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(999, 241);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 64;
             this.label6.Text = "صورة المشروع";
             this.label6.DragDrop += new System.Windows.Forms.DragEventHandler(this.label6_DragDrop);
@@ -2313,7 +2311,7 @@
             this.label22.Location = new System.Drawing.Point(379, 97);
             this.label22.MaximumSize = new System.Drawing.Size(100, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(90, 39);
+            this.label22.Size = new System.Drawing.Size(98, 39);
             this.label22.TabIndex = 29;
             this.label22.Text = "نسبة تنفيذ المشروع بالنسبة للمخصص المالي";
             // 
@@ -2353,7 +2351,7 @@
             this.label21.Location = new System.Drawing.Point(379, 60);
             this.label21.MaximumSize = new System.Drawing.Size(100, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(65, 13);
+            this.label21.Size = new System.Drawing.Size(60, 13);
             this.label21.TabIndex = 25;
             this.label21.Text = "نسبة التنفيذ";
             // 
@@ -2520,13 +2518,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label12.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(93, 95);
             this.label12.MaximumSize = new System.Drawing.Size(100, 0);
             this.label12.MinimumSize = new System.Drawing.Size(200, 0);
             this.label12.Name = "label12";
             this.label12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label12.Size = new System.Drawing.Size(200, 17);
+            this.label12.Size = new System.Drawing.Size(200, 16);
             this.label12.TabIndex = 18;
             this.label12.Text = "الموقف المالي";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2784,7 +2782,7 @@
             this.label42.Location = new System.Drawing.Point(461, 144);
             this.label42.MaximumSize = new System.Drawing.Size(100, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(90, 39);
+            this.label42.Size = new System.Drawing.Size(98, 39);
             this.label42.TabIndex = 64;
             this.label42.Text = "نسبة تنفيذ المشروع بالنسبة للمخصص المالي";
             // 
@@ -2823,7 +2821,7 @@
             this.label43.Location = new System.Drawing.Point(461, 107);
             this.label43.MaximumSize = new System.Drawing.Size(100, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(65, 13);
+            this.label43.Size = new System.Drawing.Size(60, 13);
             this.label43.TabIndex = 62;
             this.label43.Text = "نسبة التنفيذ";
             // 
@@ -2924,13 +2922,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label47.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(731, 118);
             this.label47.MaximumSize = new System.Drawing.Size(100, 0);
             this.label47.MinimumSize = new System.Drawing.Size(200, 0);
             this.label47.Name = "label47";
             this.label47.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label47.Size = new System.Drawing.Size(200, 17);
+            this.label47.Size = new System.Drawing.Size(200, 16);
             this.label47.TabIndex = 44;
             this.label47.Text = "الموقف المالي";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3080,7 +3078,7 @@
             this.label74.Location = new System.Drawing.Point(497, 138);
             this.label74.MaximumSize = new System.Drawing.Size(100, 0);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(90, 39);
+            this.label74.Size = new System.Drawing.Size(98, 39);
             this.label74.TabIndex = 90;
             this.label74.Text = "نسبة تنفيذ المشروع بالنسبة للمخصص المالي";
             // 
@@ -3119,7 +3117,7 @@
             this.label76.Location = new System.Drawing.Point(497, 101);
             this.label76.MaximumSize = new System.Drawing.Size(100, 0);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(65, 13);
+            this.label76.Size = new System.Drawing.Size(60, 13);
             this.label76.TabIndex = 88;
             this.label76.Text = "نسبة التنفيذ";
             // 
@@ -3219,13 +3217,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label79.AutoSize = true;
             this.label79.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label79.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label79.Location = new System.Drawing.Point(767, 112);
             this.label79.MaximumSize = new System.Drawing.Size(100, 0);
             this.label79.MinimumSize = new System.Drawing.Size(200, 0);
             this.label79.Name = "label79";
             this.label79.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label79.Size = new System.Drawing.Size(200, 17);
+            this.label79.Size = new System.Drawing.Size(200, 16);
             this.label79.TabIndex = 71;
             this.label79.Text = "الموقف المالي";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3388,7 +3386,7 @@
             this.label86.Location = new System.Drawing.Point(523, 138);
             this.label86.MaximumSize = new System.Drawing.Size(100, 0);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(90, 39);
+            this.label86.Size = new System.Drawing.Size(98, 39);
             this.label86.TabIndex = 115;
             this.label86.Text = "نسبة تنفيذ المشروع بالنسبة للمخصص المالي";
             // 
@@ -3427,7 +3425,7 @@
             this.label88.Location = new System.Drawing.Point(523, 101);
             this.label88.MaximumSize = new System.Drawing.Size(100, 0);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(65, 13);
+            this.label88.Size = new System.Drawing.Size(60, 13);
             this.label88.TabIndex = 113;
             this.label88.Text = "نسبة التنفيذ";
             // 
@@ -3527,13 +3525,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label91.AutoSize = true;
             this.label91.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label91.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label91.Location = new System.Drawing.Point(793, 112);
             this.label91.MaximumSize = new System.Drawing.Size(100, 0);
             this.label91.MinimumSize = new System.Drawing.Size(200, 0);
             this.label91.Name = "label91";
             this.label91.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label91.Size = new System.Drawing.Size(200, 17);
+            this.label91.Size = new System.Drawing.Size(200, 16);
             this.label91.TabIndex = 96;
             this.label91.Text = "الموقف المالي";
             this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3696,7 +3694,7 @@
             this.label98.Location = new System.Drawing.Point(523, 138);
             this.label98.MaximumSize = new System.Drawing.Size(100, 0);
             this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(90, 39);
+            this.label98.Size = new System.Drawing.Size(98, 39);
             this.label98.TabIndex = 115;
             this.label98.Text = "نسبة تنفيذ المشروع بالنسبة للمخصص المالي";
             // 
@@ -3735,7 +3733,7 @@
             this.label100.Location = new System.Drawing.Point(523, 101);
             this.label100.MaximumSize = new System.Drawing.Size(100, 0);
             this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(65, 13);
+            this.label100.Size = new System.Drawing.Size(60, 13);
             this.label100.TabIndex = 113;
             this.label100.Text = "نسبة التنفيذ";
             // 
@@ -3836,13 +3834,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label103.AutoSize = true;
             this.label103.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label103.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label103.Location = new System.Drawing.Point(793, 112);
             this.label103.MaximumSize = new System.Drawing.Size(100, 0);
             this.label103.MinimumSize = new System.Drawing.Size(200, 0);
             this.label103.Name = "label103";
             this.label103.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label103.Size = new System.Drawing.Size(200, 17);
+            this.label103.Size = new System.Drawing.Size(200, 16);
             this.label103.TabIndex = 96;
             this.label103.Text = "الموقف المالي";
             this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3983,7 +3981,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Gardinia.Properties.Resources.icons8_undo_24;
-            this.pictureBox3.Location = new System.Drawing.Point(1033, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(1098, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(23, 19);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3991,22 +3989,11 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1062, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 19);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.InitialImage = null;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(12, 7);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(64, 64);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -4020,22 +4007,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1133, 787);
+            this.ClientSize = new System.Drawing.Size(1133, 749);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.Projectsavings);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.megaProjectNameText);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DataView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "r";
             this.Load += new System.EventHandler(this.DataView_Load);
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
@@ -4063,7 +4048,6 @@
             this.metroTabPage7.ResumeLayout(false);
             this.metroTabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -4073,7 +4057,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button7;

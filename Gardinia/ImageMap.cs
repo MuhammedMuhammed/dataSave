@@ -296,6 +296,7 @@ OleDbConnection SSPI = new OleDbConnection(myconnecting);
         public DataTable List(string ProjectUniqueCode ,String SqlQuery,string TableName)
             {
             OleDbConnection conn = new OleDbConnection(myconnecting);
+            conn.Open();
 
             OleDbCommand sqlRcmd = new OleDbCommand (SqlQuery, conn);
             //DataTable dt = new DataTable();
@@ -305,10 +306,13 @@ OleDbConnection SSPI = new OleDbConnection(myconnecting);
                 
                 DataSet dsR = new DataSet();
                 DataTable dt = new DataTable();
+
             dt.TableName = TableName;
             try
             {
-                conn.Open();
+
+                int rowsAffected = sqlRcmd.ExecuteNonQuery();
+
                 //    sqlDataReader = sqlRcmd.ExecuteReader();
                 //while (sqlDataReader.Read()) { 
                 ////string dustreport =sqlDataReader.GetString("dustReport")
@@ -317,7 +321,10 @@ OleDbConnection SSPI = new OleDbConnection(myconnecting);
                 //        metroListView1.Items.Add(listViewItem);
 
                 //OleDbDataAdapter.Fill(dsR, "GardiniaProjectsDustReports");
+
                 sqlRDataAdapter.Fill(dt);
+                MessageBox.Show(SqlQuery + "\n" + sqlRcmd.CommandText + "\n" + dt.DataSet);
+
                 conn.Close();
 
             }
@@ -463,67 +470,85 @@ OleDbConnection SSPI = new OleDbConnection(myconnecting);
             //    metroButton1.Text = path;
 
             //}
-            try {
-                if (!(sender as Button).Text.Equals("تقرير التربة") && !(sender as Button).Text.Equals("صور المشروع") && !(sender as Button).Text.Equals("لوحات المشروع + Asbuilt") && !(sender as Button).Text.Equals("حصر المشروع"))
-                {
-                    if (ds.Tables["GardiniaProjects"].Rows.Count > 0)
+            //try {
+            //    if (!(sender as Button).Text.Equals("تقرير التربة") && !(sender as Button).Text.Equals("صور المشروع") && !(sender as Button).Text.Equals("لوحات المشروع + Asbuilt") && !(sender as Button).Text.Equals("حصر المشروع"))
+            //    {
+            //        if (ds.Tables["GardiniaProjects"].Rows.Count > 0)
 
-                    {
-                        if (!ds.Tables["GardiniaProjects"].Rows[0][(sender as Button).Name.ToString()].Equals(null))
-                        {
-                            pdf PDF = new pdf(ds.Tables["GardiniaProjects"].Rows[0][(sender as Button).Name.ToString()].ToString());
-                            PDF.ShowDialog();
-                        }
-                    }
-                }
-                else if ((sender as Button).Text.Equals("تقرير التربة"))
-                {
-                    sqlReports = "select [*] From [ProjectReports] where [ContractCode]='" + projectCoDe + "'";
-                    List(projectCoDe, sqlReports, "ProjectReports");
-                    FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "ProjectReports"));
-                    FLS.Text = projectCoDe;
-                    FLS.ShowDialog();
+            //        {
+            //            if (!ds.Tables["GardiniaProjects"].Rows[0][(sender as Button).Name.ToString()].Equals(null))
+            //            {
+            //                pdf PDF = new pdf(ds.Tables["GardiniaProjects"].Rows[0][(sender as Button).Name.ToString()].ToString());
+            //                PDF.ShowDialog();
+            //            }
+            //        }
+            //    }
+            //    else if ((sender as Button).Text.Equals("تقرير التربة"))
+            //    {
+            //        sqlReports = "select [*] From [ProjectReports] where [ContractCode]='" + projectCoDe + "'";
+            //        List(projectCoDe, sqlReports, "ProjectReports");
+            //        FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "ProjectReports"));
+            //        FLS.Text = projectCoDe;
+            //        FLS.ShowDialog();
 
-                }
-                else if ((sender as Button).Text.Equals("صور المشروع"))
-                {
-                    sqlReports = "select * From ProjectImages where ContractCode='" + projectCoDe + "'";
-                    List(projectCoDe, sqlReports, "ProjectImages");
-                    FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "ProjectImages"));
-                    FLS.Text = projectCoDe;
-                    FLS.ShowDialog();
-                }
-                else if ((sender as Button).Text.Equals("لوحات المشروع + Asbuilt"))
-                {
-                    sqlReports = "select * From AsBuiltTable where ContractCode='" + projectCoDe + "'";
-                    List(projectCoDe, sqlReports, "AsBuiltTable");
-                    FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "AsBuiltTable"));
-                    FLS.Text = projectCoDe;
-                    
-                    FLS.ShowDialog();
-                    FLS.MaximizeBox=true;
-                }
-                else
-                {
-                    sqlReports = "select [BuildReport] From [BuildsMainTable] where [ContractCode]='"+projectCoDe+"'";
-                    List(projectCoDe, sqlReports, "BuildsMainTable");
-                    FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "BuildsMainTable"));
-                    FLS.Text = projectCoDe;
-                    FLS.ShowDialog();
-                    FLS.MaximizeBox = true;
+            //    }
+            //    else if ((sender as Button).Text.Equals("صور المشروع"))
+            //    {
+            //        sqlReports = "select * From ProjectImages where ContractCode='" + projectCoDe + "'";
+            //        List(projectCoDe, sqlReports, "ProjectImages");
+            //        FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "ProjectImages"));
+            //        FLS.Text = projectCoDe;
+            //        FLS.ShowDialog();
+            //    }
+            //    else if ((sender as Button).Text.Equals("لوحات المشروع + Asbuilt"))
+            //    {
+            //        sqlReports = "select * From AsBuiltTable where ContractCode='" + projectCoDe + "'";
+            //        List(projectCoDe, sqlReports, "AsBuiltTable");
+            //        FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "AsBuiltTable"));
+            //        FLS.Text = projectCoDe;
 
-                }
+            //        FLS.ShowDialog();
+            //        FLS.MaximizeBox=true;
+            //    }
+            //    else
+            //    {
+            //        sqlReports = "select [BuildReport] From [BuildsMainTable] where [ContractCode]='"+projectCoDe+"'";
+            //        List(projectCoDe, sqlReports, "BuildsMainTable");
+            //        FilesLists FLS = new FilesLists(List(projectCoDe, sqlReports, "BuildsMainTable"));
+            //        FLS.Text = projectCoDe;
+            //        FLS.ShowDialog();
+            //        FLS.MaximizeBox = true;
+
+            //    }
+            //}
+            //catch (Exception ex) {
+            //    MessageBox.Show(ex.Message);
+            //}
+            try { 
+            sqlReports = "select [FilePath] From [ProjectFiles] where [ContractCode] Like '%" + projectCoDe + "%' And [FileCategory] Like '%"+((Button)sender).Text+"%'";
+            //List(projectCoDe, sqlReports, "ProjectFiles");
+            FilesLists FLS2 = new FilesLists(List(projectCoDe, sqlReports, "ProjectFiles"));
+            FLS2.Text = projectCoDe;
+            FLS2.ShowDialog();
+            FLS2.MaximizeBox = true;
+            }catch(Exception ex)
+            {
+
+                var st = new StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(st.FrameCount - 1);
+                // Get the line number from the stack frame
+                var line = frame.GetFileLineNumber();
+               
+                MessageBox.Show((ex.Message+"\n"+frame.GetFileName().ToString() + "\n" + frame.GetFileColumnNumber().ToString()), line.ToString(),MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
         bool datechanged = false;
         BuildData bd = new BuildData();
         private void button2_Click(object sender, EventArgs e)
@@ -649,163 +674,7 @@ OleDbConnection SSPI = new OleDbConnection(myconnecting);
         bool uploaddone;
         private string report3loc;
 
-        internal void FileUpload(Button metroButtons, string btnText, string FolderName,bool done)
-        {
-            OpenFileDialog PDFUPLOADS = new OpenFileDialog()
-            {
-                Filter = "PDF|*.pdf|Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png|Excel Work Book 97-2003|*.xls; *.xlsx; *.csv",
-                ValidateNames = true
-            };
-
-            DialogResult result = PDFUPLOADS.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                if (!(String.IsNullOrEmpty(label2.Text) || String.IsNullOrWhiteSpace(label2.Text)))
-                {
-                    string file = PDFUPLOADS.FileName;
-
-
-                    string[] f = file.Split('\\');
-                    string fn = f[(f.Length) - 1];
-                    string path = "";
-                    //@"C:\Users\dell\source\repos\Gardinia\Gardinia
-                    //string subPdfFolder = Directory.GetCurrentDirectory() + "\\pdfsFolder\\";
-                    //string subdirpdf = Directory.GetCurrentDirectory() + "\\pdfsFolder\\" + FolderName;
-                    //string imagesSubFol = Directory.GetCurrentDirectory() + "\\images\\";
-                    //string imagesSubDir = Directory.GetCurrentDirectory() + "\\images\\" + FolderName;
-                    string subPdfFolder = ".\\pdfsFolder\\";
-                    string subdirpdf = ".\\pdfsFolder\\" + FolderName;
-                    string PDFSContractFolder = ".\\pdfsFolder\\" + FolderName + "\\" + label2.Text;
-
-                    string imagesSubFol = ".\\images\\";
-                    string imagesSubDir = ".\\images\\" + FolderName;
-                    string imagesContractFolder = ".\\images\\" + FolderName + "\\" + label2.Text;
-
-                    string ExcelParentFolder = ".\\Excel\\";
-                    string ExcelSubFolder = ".\\Excel\\" + FolderName;
-                    string excelsContractFolder = ".\\Excel\\" + FolderName + "\\" + label2.Text;
-
-                    try
-                    {
-                        if (Path.GetExtension(fn).ToLower() == ".pdf" || Path.GetExtension(fn).ToUpper() == ".pdf")
-                        {
-
-                            if (!Directory.Exists(subPdfFolder))
-                            {
-                                Directory.CreateDirectory(subPdfFolder);
-                            }
-
-                            if (!Directory.Exists(subdirpdf))
-                            {
-                                Directory.CreateDirectory(subdirpdf);
-                            }
-                            if (!Directory.Exists(PDFSContractFolder))
-                            {
-                                Directory.CreateDirectory(PDFSContractFolder);
-                            }
-
-
-                            if (Directory.GetFiles(PDFSContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
-                            {
-                                MessageBox.Show(file);
-                                MessageBox.Show(fn);
-
-                                path = String.Format(subPdfFolder + FolderName + "\\" + label2.Text + "\\{0}", string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn)));
-                            }
-                            else
-                            {
-                                path = String.Format(subPdfFolder + FolderName + "\\" + label2.Text + "\\{0}", fn);
-                            }
-                            MessageBox.Show(f + "سيتم رفع الفايل" + fn);
-                            File.Copy(file, path, true);
-                            done = true;
-                            report3loc = path;
-                            metroButtons.Text = path;
-                        }
-                        else if (ImageExtensions.Contains(Path.GetExtension(fn).ToLower()) || ImageExtensions.Contains(Path.GetExtension(fn).ToUpper()))
-                        {
-                            if (!Directory.Exists(imagesSubFol))
-                            {
-                                Directory.CreateDirectory(imagesSubFol);
-                            }
-
-                            if (!Directory.Exists(imagesSubDir))
-                            {
-                                Directory.CreateDirectory(imagesSubDir);
-                            }
-                            if (!Directory.Exists(imagesContractFolder))
-                            {
-                                Directory.CreateDirectory(imagesContractFolder);
-                            }
-                            if (Directory.GetFiles(imagesContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
-                            {
-                                MessageBox.Show(file);
-                                path = String.Format(imagesSubFol + FolderName + "\\" + label2.Text + "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
-                            }
-                            else
-                            {
-                                path = String.Format(imagesSubFol + FolderName + "\\" + label2.Text + "\\{0}", fn);
-                            }
-                            MessageBox.Show(f + "سيتم رفع الفايل" + fn);
-
-                            File.Copy(file, path, true);
-                            done = true;
-                            report3loc = path;
-                            metroButtons.Text = path;
-                        }
-                        else if (ExcelExtensions.Contains(Path.GetExtension(fn).ToLower()) || ExcelExtensions.Contains(Path.GetExtension(fn).ToUpper()))
-                        {
-                            if (!Directory.Exists(ExcelParentFolder))
-                            {
-                                Directory.CreateDirectory(ExcelParentFolder);
-                            }
-
-                            if (!Directory.Exists(ExcelSubFolder))
-                            {
-                                Directory.CreateDirectory(ExcelSubFolder);
-                            }
-                            if (!Directory.Exists(excelsContractFolder))
-                            {
-                                Directory.CreateDirectory(excelsContractFolder);
-                            }
-                            if (Directory.GetFiles(excelsContractFolder, fn, SearchOption.AllDirectories).FirstOrDefault() != null)
-                            {
-                                MessageBox.Show(file);
-                                path = String.Format(ExcelParentFolder + FolderName + "\\" + label2.Text + "\\{0}", (string.Format(Path.GetFileNameWithoutExtension(file) + DateTime.Now.ToString("dddd_MM_dd_yyyy HH_mm_ss") + Path.GetExtension(fn))));
-                            }
-                            else
-                            {
-                                path = String.Format(ExcelParentFolder + FolderName + "\\" + label2.Text + "\\{0}", fn);
-                            }
-                            File.Copy(file, path, true);
-                            done = true;
-                            report3loc = path;
-                            metroButtons.Text = path;
-                        }
-                        else
-                        {
-                            MessageBox.Show("يجب رفع صورة او بي دي اف او اكسل");
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        var st = new StackTrace(ex, true);
-                        // Get the top stack frame
-                        var frame = st.GetFrame(st.FrameCount - 1);
-                        // Get the line number from the stack frame
-                        var line = frame.GetFileLineNumber();
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("ادخل رقم العقد");
-                }
-            }
-
-        }
+      
         public void insertMultiData(String FilesPaths, string fileCat)
         {
 

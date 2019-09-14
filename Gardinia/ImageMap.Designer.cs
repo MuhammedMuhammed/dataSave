@@ -336,13 +336,14 @@ namespace Gardinia
             // 
             this.browseSavings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseSavings.BackgroundImage")));
             this.browseSavings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseSavings.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseSavings.ForeColor = System.Drawing.Color.Transparent;
             this.browseSavings.Highlight = true;
             this.browseSavings.Location = new System.Drawing.Point(60, 126);
             this.browseSavings.Name = "browseSavings";
             this.browseSavings.Size = new System.Drawing.Size(23, 23);
             this.browseSavings.TabIndex = 261;
             this.browseSavings.Text = "الوفر";
-            this.browseSavings.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseSavings.UseSelectable = true;
             this.browseSavings.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -350,13 +351,14 @@ namespace Gardinia
             // 
             this.browsecontractValueFile.BackgroundImage = global::Gardinia.Properties.Resources.attachment;
             this.browsecontractValueFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browsecontractValueFile.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browsecontractValueFile.ForeColor = System.Drawing.Color.Transparent;
             this.browsecontractValueFile.Highlight = true;
             this.browsecontractValueFile.Location = new System.Drawing.Point(59, 25);
             this.browsecontractValueFile.Name = "browsecontractValueFile";
             this.browsecontractValueFile.Size = new System.Drawing.Size(23, 23);
             this.browsecontractValueFile.TabIndex = 260;
             this.browsecontractValueFile.Text = "القيمة التعاقدية";
-            this.browsecontractValueFile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browsecontractValueFile.UseSelectable = true;
             this.browsecontractValueFile.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -364,13 +366,14 @@ namespace Gardinia
             // 
             this.browselastExactractFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browselastExactractFile.BackgroundImage")));
             this.browselastExactractFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browselastExactractFile.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browselastExactractFile.ForeColor = System.Drawing.Color.Transparent;
             this.browselastExactractFile.Highlight = true;
             this.browselastExactractFile.Location = new System.Drawing.Point(60, 83);
             this.browselastExactractFile.Name = "browselastExactractFile";
             this.browselastExactractFile.Size = new System.Drawing.Size(23, 23);
             this.browselastExactractFile.TabIndex = 259;
             this.browselastExactractFile.Text = "اخرمستخلص";
-            this.browselastExactractFile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browselastExactractFile.UseSelectable = true;
             this.browselastExactractFile.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -378,13 +381,14 @@ namespace Gardinia
             // 
             this.browseFinalClosingFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseFinalClosingFile.BackgroundImage")));
             this.browseFinalClosingFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseFinalClosingFile.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseFinalClosingFile.ForeColor = System.Drawing.Color.Transparent;
             this.browseFinalClosingFile.Highlight = true;
             this.browseFinalClosingFile.Location = new System.Drawing.Point(60, 54);
             this.browseFinalClosingFile.Name = "browseFinalClosingFile";
             this.browseFinalClosingFile.Size = new System.Drawing.Size(23, 23);
             this.browseFinalClosingFile.TabIndex = 258;
             this.browseFinalClosingFile.Text = "الختامي المنتظر";
-            this.browseFinalClosingFile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseFinalClosingFile.UseSelectable = true;
             this.browseFinalClosingFile.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -392,13 +396,14 @@ namespace Gardinia
             // 
             this.browsemetroButton54.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browsemetroButton54.BackgroundImage")));
             this.browsemetroButton54.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browsemetroButton54.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browsemetroButton54.ForeColor = System.Drawing.Color.Transparent;
             this.browsemetroButton54.Highlight = true;
             this.browsemetroButton54.Location = new System.Drawing.Point(223, 277);
             this.browsemetroButton54.Name = "browsemetroButton54";
             this.browsemetroButton54.Size = new System.Drawing.Size(23, 23);
             this.browsemetroButton54.TabIndex = 257;
             this.browsemetroButton54.Text = "لوحات المشروع + Asbuilt";
-            this.browsemetroButton54.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browsemetroButton54.UseSelectable = true;
             this.browsemetroButton54.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -406,13 +411,14 @@ namespace Gardinia
             // 
             this.browseManagementMails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseManagementMails.BackgroundImage")));
             this.browseManagementMails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseManagementMails.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseManagementMails.ForeColor = System.Drawing.Color.Transparent;
             this.browseManagementMails.Highlight = true;
             this.browseManagementMails.Location = new System.Drawing.Point(222, 122);
             this.browseManagementMails.Name = "browseManagementMails";
             this.browseManagementMails.Size = new System.Drawing.Size(23, 23);
             this.browseManagementMails.TabIndex = 256;
             this.browseManagementMails.Text = "جوابات الادارة";
-            this.browseManagementMails.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseManagementMails.UseSelectable = true;
             this.browseManagementMails.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -420,13 +426,14 @@ namespace Gardinia
             // 
             this.browseReceipts.BackgroundImage = global::Gardinia.Properties.Resources.attachment;
             this.browseReceipts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseReceipts.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseReceipts.ForeColor = System.Drawing.Color.Transparent;
             this.browseReceipts.Highlight = true;
             this.browseReceipts.Location = new System.Drawing.Point(221, 21);
             this.browseReceipts.Name = "browseReceipts";
             this.browseReceipts.Size = new System.Drawing.Size(23, 23);
             this.browseReceipts.TabIndex = 255;
             this.browseReceipts.Text = "طلبات الاستلام";
-            this.browseReceipts.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseReceipts.UseSelectable = true;
             this.browseReceipts.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -434,13 +441,14 @@ namespace Gardinia
             // 
             this.BrowseSiteOrders.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowseSiteOrders.BackgroundImage")));
             this.BrowseSiteOrders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowseSiteOrders.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowseSiteOrders.ForeColor = System.Drawing.Color.Transparent;
             this.BrowseSiteOrders.Highlight = true;
             this.BrowseSiteOrders.Location = new System.Drawing.Point(222, 79);
             this.BrowseSiteOrders.Name = "BrowseSiteOrders";
             this.BrowseSiteOrders.Size = new System.Drawing.Size(23, 23);
             this.BrowseSiteOrders.TabIndex = 254;
             this.BrowseSiteOrders.Text = "اوامر الموقع";
-            this.BrowseSiteOrders.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowseSiteOrders.UseSelectable = true;
             this.BrowseSiteOrders.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -448,13 +456,14 @@ namespace Gardinia
             // 
             this.browseExploitationReductionandCancellationNotes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseExploitationReductionandCancellationNotes.BackgroundImage")));
             this.browseExploitationReductionandCancellationNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseExploitationReductionandCancellationNotes.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseExploitationReductionandCancellationNotes.ForeColor = System.Drawing.Color.Transparent;
             this.browseExploitationReductionandCancellationNotes.Highlight = true;
             this.browseExploitationReductionandCancellationNotes.Location = new System.Drawing.Point(223, 253);
             this.browseExploitationReductionandCancellationNotes.Name = "browseExploitationReductionandCancellationNotes";
             this.browseExploitationReductionandCancellationNotes.Size = new System.Drawing.Size(23, 23);
             this.browseExploitationReductionandCancellationNotes.TabIndex = 253;
             this.browseExploitationReductionandCancellationNotes.Text = "مذكرات التجاوز و المخفض و الملغى";
-            this.browseExploitationReductionandCancellationNotes.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseExploitationReductionandCancellationNotes.UseSelectable = true;
             this.browseExploitationReductionandCancellationNotes.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -462,13 +471,14 @@ namespace Gardinia
             // 
             this.browseConstructionSafetyReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseConstructionSafetyReport.BackgroundImage")));
             this.browseConstructionSafetyReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseConstructionSafetyReport.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseConstructionSafetyReport.ForeColor = System.Drawing.Color.Transparent;
             this.browseConstructionSafetyReport.Highlight = true;
             this.browseConstructionSafetyReport.Location = new System.Drawing.Point(223, 207);
             this.browseConstructionSafetyReport.Name = "browseConstructionSafetyReport";
             this.browseConstructionSafetyReport.Size = new System.Drawing.Size(23, 23);
             this.browseConstructionSafetyReport.TabIndex = 251;
             this.browseConstructionSafetyReport.Text = "تقرير السلامة الانشائية";
-            this.browseConstructionSafetyReport.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseConstructionSafetyReport.UseSelectable = true;
             this.browseConstructionSafetyReport.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -476,13 +486,14 @@ namespace Gardinia
             // 
             this.browsemetroButton11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browsemetroButton11.BackgroundImage")));
             this.browsemetroButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browsemetroButton11.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browsemetroButton11.ForeColor = System.Drawing.Color.Transparent;
             this.browsemetroButton11.Highlight = true;
             this.browsemetroButton11.Location = new System.Drawing.Point(223, 176);
             this.browsemetroButton11.Name = "browsemetroButton11";
             this.browsemetroButton11.Size = new System.Drawing.Size(23, 23);
             this.browsemetroButton11.TabIndex = 250;
             this.browsemetroButton11.Text = "صور المشروع";
-            this.browsemetroButton11.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browsemetroButton11.UseSelectable = true;
             this.browsemetroButton11.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -490,13 +501,14 @@ namespace Gardinia
             // 
             this.browseNetbudget.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browseNetbudget.BackgroundImage")));
             this.browseNetbudget.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browseNetbudget.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.browseNetbudget.ForeColor = System.Drawing.Color.Transparent;
             this.browseNetbudget.Highlight = true;
             this.browseNetbudget.Location = new System.Drawing.Point(223, 151);
             this.browseNetbudget.Name = "browseNetbudget";
             this.browseNetbudget.Size = new System.Drawing.Size(23, 23);
             this.browseNetbudget.TabIndex = 249;
             this.browseNetbudget.Text = "الميزانية الشبكية";
-            this.browseNetbudget.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.browseNetbudget.UseSelectable = true;
             this.browseNetbudget.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -504,13 +516,14 @@ namespace Gardinia
             // 
             this.BrowseAppropriations.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowseAppropriations.BackgroundImage")));
             this.BrowseAppropriations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowseAppropriations.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowseAppropriations.ForeColor = System.Drawing.Color.Transparent;
             this.BrowseAppropriations.Highlight = true;
             this.BrowseAppropriations.Location = new System.Drawing.Point(222, 50);
             this.BrowseAppropriations.Name = "BrowseAppropriations";
             this.BrowseAppropriations.Size = new System.Drawing.Size(23, 23);
             this.BrowseAppropriations.TabIndex = 248;
             this.BrowseAppropriations.Text = "الاعتمادات المخصصة";
-            this.BrowseAppropriations.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowseAppropriations.UseSelectable = true;
             this.BrowseAppropriations.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -518,13 +531,14 @@ namespace Gardinia
             // 
             this.Browsnotices.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Browsnotices.BackgroundImage")));
             this.Browsnotices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Browsnotices.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.Browsnotices.ForeColor = System.Drawing.Color.Transparent;
             this.Browsnotices.Highlight = true;
             this.Browsnotices.Location = new System.Drawing.Point(406, 108);
             this.Browsnotices.Name = "Browsnotices";
             this.Browsnotices.Size = new System.Drawing.Size(23, 23);
             this.Browsnotices.TabIndex = 247;
             this.Browsnotices.Text = "الاخطار";
-            this.Browsnotices.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Browsnotices.UseSelectable = true;
             this.Browsnotices.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -532,13 +546,14 @@ namespace Gardinia
             // 
             this.BrowsepercentageOfImplementationDetails.BackgroundImage = global::Gardinia.Properties.Resources.attachment;
             this.BrowsepercentageOfImplementationDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowsepercentageOfImplementationDetails.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowsepercentageOfImplementationDetails.ForeColor = System.Drawing.Color.Transparent;
             this.BrowsepercentageOfImplementationDetails.Highlight = true;
             this.BrowsepercentageOfImplementationDetails.Location = new System.Drawing.Point(405, 21);
             this.BrowsepercentageOfImplementationDetails.Name = "BrowsepercentageOfImplementationDetails";
             this.BrowsepercentageOfImplementationDetails.Size = new System.Drawing.Size(23, 23);
             this.BrowsepercentageOfImplementationDetails.TabIndex = 246;
-            this.BrowsepercentageOfImplementationDetails.Text = "تفصيل نسبة التنفيذ";
-            this.BrowsepercentageOfImplementationDetails.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BrowsepercentageOfImplementationDetails.Text = "الموقف التنفيذي للموقع";
             this.BrowsepercentageOfImplementationDetails.UseSelectable = true;
             this.BrowsepercentageOfImplementationDetails.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -546,13 +561,14 @@ namespace Gardinia
             // 
             this.BrowseDurationProgram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowseDurationProgram.BackgroundImage")));
             this.BrowseDurationProgram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowseDurationProgram.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowseDurationProgram.ForeColor = System.Drawing.Color.Transparent;
             this.BrowseDurationProgram.Highlight = true;
             this.BrowseDurationProgram.Location = new System.Drawing.Point(406, 79);
             this.BrowseDurationProgram.Name = "BrowseDurationProgram";
             this.BrowseDurationProgram.Size = new System.Drawing.Size(23, 23);
             this.BrowseDurationProgram.TabIndex = 245;
             this.BrowseDurationProgram.Text = "البرنامج الزمني";
-            this.BrowseDurationProgram.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowseDurationProgram.UseSelectable = true;
             this.BrowseDurationProgram.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -560,13 +576,14 @@ namespace Gardinia
             // 
             this.BroseprojectNotes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BroseprojectNotes.BackgroundImage")));
             this.BroseprojectNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BroseprojectNotes.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BroseprojectNotes.ForeColor = System.Drawing.Color.Transparent;
             this.BroseprojectNotes.Highlight = true;
             this.BroseprojectNotes.Location = new System.Drawing.Point(407, 253);
             this.BroseprojectNotes.Name = "BroseprojectNotes";
             this.BroseprojectNotes.Size = new System.Drawing.Size(23, 23);
             this.BroseprojectNotes.TabIndex = 244;
             this.BroseprojectNotes.Text = "ملاحظات المشروع";
-            this.BroseprojectNotes.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BroseprojectNotes.UseSelectable = true;
             this.BroseprojectNotes.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -574,13 +591,14 @@ namespace Gardinia
             // 
             this.BroselocationOfCheckingDrillingBottom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BroselocationOfCheckingDrillingBottom.BackgroundImage")));
             this.BroselocationOfCheckingDrillingBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BroselocationOfCheckingDrillingBottom.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BroselocationOfCheckingDrillingBottom.ForeColor = System.Drawing.Color.Transparent;
             this.BroselocationOfCheckingDrillingBottom.Highlight = true;
             this.BroselocationOfCheckingDrillingBottom.Location = new System.Drawing.Point(407, 224);
             this.BroselocationOfCheckingDrillingBottom.Name = "BroselocationOfCheckingDrillingBottom";
             this.BroselocationOfCheckingDrillingBottom.Size = new System.Drawing.Size(23, 23);
             this.BroselocationOfCheckingDrillingBottom.TabIndex = 243;
             this.BroselocationOfCheckingDrillingBottom.Text = "مجضر معاينة قاع الحفر ";
-            this.BroselocationOfCheckingDrillingBottom.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BroselocationOfCheckingDrillingBottom.UseSelectable = true;
             this.BroselocationOfCheckingDrillingBottom.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -588,13 +606,14 @@ namespace Gardinia
             // 
             this.BrowsereceiptOfTheSite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowsereceiptOfTheSite.BackgroundImage")));
             this.BrowsereceiptOfTheSite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowsereceiptOfTheSite.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowsereceiptOfTheSite.ForeColor = System.Drawing.Color.Transparent;
             this.BrowsereceiptOfTheSite.Highlight = true;
             this.BrowsereceiptOfTheSite.Location = new System.Drawing.Point(407, 195);
             this.BrowsereceiptOfTheSite.Name = "BrowsereceiptOfTheSite";
             this.BrowsereceiptOfTheSite.Size = new System.Drawing.Size(23, 23);
             this.BrowsereceiptOfTheSite.TabIndex = 242;
             this.BrowsereceiptOfTheSite.Text = "محضر استلام الموقع";
-            this.BrowsereceiptOfTheSite.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowsereceiptOfTheSite.UseSelectable = true;
             this.BrowsereceiptOfTheSite.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -602,13 +621,14 @@ namespace Gardinia
             // 
             this.BrowsemetroButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowsemetroButton4.BackgroundImage")));
             this.BrowsemetroButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowsemetroButton4.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowsemetroButton4.ForeColor = System.Drawing.Color.Transparent;
             this.BrowsemetroButton4.Highlight = true;
             this.BrowsemetroButton4.Location = new System.Drawing.Point(408, 166);
             this.BrowsemetroButton4.Name = "BrowsemetroButton4";
             this.BrowsemetroButton4.Size = new System.Drawing.Size(23, 23);
             this.BrowsemetroButton4.TabIndex = 241;
             this.BrowsemetroButton4.Text = "تقرير التربة";
-            this.BrowsemetroButton4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowsemetroButton4.UseSelectable = true;
             this.BrowsemetroButton4.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -616,13 +636,14 @@ namespace Gardinia
             // 
             this.BrowseprojectIndexation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowseprojectIndexation.BackgroundImage")));
             this.BrowseprojectIndexation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowseprojectIndexation.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowseprojectIndexation.ForeColor = System.Drawing.Color.Transparent;
             this.BrowseprojectIndexation.Highlight = true;
             this.BrowseprojectIndexation.Location = new System.Drawing.Point(407, 137);
             this.BrowseprojectIndexation.Name = "BrowseprojectIndexation";
             this.BrowseprojectIndexation.Size = new System.Drawing.Size(23, 23);
             this.BrowseprojectIndexation.TabIndex = 240;
             this.BrowseprojectIndexation.Text = "مقايسة المشروع";
-            this.BrowseprojectIndexation.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowseprojectIndexation.UseSelectable = true;
             this.BrowseprojectIndexation.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -630,13 +651,14 @@ namespace Gardinia
             // 
             this.BrowsemetroButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowsemetroButton1.BackgroundImage")));
             this.BrowsemetroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BrowsemetroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.BrowsemetroButton1.ForeColor = System.Drawing.Color.Transparent;
             this.BrowsemetroButton1.Highlight = true;
             this.BrowsemetroButton1.Location = new System.Drawing.Point(406, 50);
             this.BrowsemetroButton1.Name = "BrowsemetroButton1";
             this.BrowsemetroButton1.Size = new System.Drawing.Size(23, 23);
             this.BrowsemetroButton1.TabIndex = 239;
             this.BrowsemetroButton1.Text = "حصر المشروع";
-            this.BrowsemetroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.BrowsemetroButton1.UseSelectable = true;
             this.BrowsemetroButton1.Click += new System.EventHandler(this.BrowseFiles);
             // 
@@ -891,7 +913,7 @@ namespace Gardinia
             this.metroDateTime4.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.metroDateTime4.FontSize = MetroFramework.MetroDateTimeSize.Small;
             this.metroDateTime4.Location = new System.Drawing.Point(615, 363);
-            this.metroDateTime4.MinimumSize = new System.Drawing.Size(4, 25);
+            this.metroDateTime4.MinimumSize = new System.Drawing.Size(0, 25);
             this.metroDateTime4.Name = "metroDateTime4";
             this.metroDateTime4.Size = new System.Drawing.Size(145, 25);
             this.metroDateTime4.Style = MetroFramework.MetroColorStyle.White;
@@ -934,7 +956,7 @@ namespace Gardinia
             this.metroDateTime3.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.metroDateTime3.FontSize = MetroFramework.MetroDateTimeSize.Small;
             this.metroDateTime3.Location = new System.Drawing.Point(613, 303);
-            this.metroDateTime3.MinimumSize = new System.Drawing.Size(4, 25);
+            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 25);
             this.metroDateTime3.Name = "metroDateTime3";
             this.metroDateTime3.Size = new System.Drawing.Size(145, 25);
             this.metroDateTime3.Style = MetroFramework.MetroColorStyle.White;
@@ -1383,7 +1405,7 @@ namespace Gardinia
             this.percentageOfImplementationDetails.Name = "percentageOfImplementationDetails";
             this.percentageOfImplementationDetails.Size = new System.Drawing.Size(175, 23);
             this.percentageOfImplementationDetails.TabIndex = 129;
-            this.percentageOfImplementationDetails.Text = "تفصيل نسبة التنفيذ";
+            this.percentageOfImplementationDetails.Text = "الموقف التنفيذي للموقع";
             this.percentageOfImplementationDetails.UseSelectable = true;
             this.percentageOfImplementationDetails.Click += new System.EventHandler(this.metroButton27_Click);
             // 

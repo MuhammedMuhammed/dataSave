@@ -42,11 +42,13 @@
             this.MegaProjTimeStrategy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // megaProjectName
             // 
-            this.megaProjectName.Location = new System.Drawing.Point(342, 22);
+            this.megaProjectName.Location = new System.Drawing.Point(343, 41);
             this.megaProjectName.Name = "megaProjectName";
             this.megaProjectName.Size = new System.Drawing.Size(236, 20);
             this.megaProjectName.TabIndex = 0;
@@ -54,24 +56,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(504, 6);
+            this.label1.Location = new System.Drawing.Point(505, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "المشروع العام";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 6);
+            this.label2.Location = new System.Drawing.Point(171, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "عدد المراحل";
             // 
             // noOfPhrases
             // 
-            this.noOfPhrases.Location = new System.Drawing.Point(8, 22);
+            this.noOfPhrases.Location = new System.Drawing.Point(9, 41);
             this.noOfPhrases.Name = "noOfPhrases";
             this.noOfPhrases.Size = new System.Drawing.Size(236, 20);
             this.noOfPhrases.TabIndex = 2;
@@ -79,15 +81,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(504, 71);
+            this.label3.Location = new System.Drawing.Point(505, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "ميزانية المشروع";
             // 
             // megaProjectFundemental
             // 
-            this.megaProjectFundemental.Location = new System.Drawing.Point(342, 87);
+            this.megaProjectFundemental.Location = new System.Drawing.Point(343, 106);
             this.megaProjectFundemental.Name = "megaProjectFundemental";
             this.megaProjectFundemental.Size = new System.Drawing.Size(236, 20);
             this.megaProjectFundemental.TabIndex = 4;
@@ -123,7 +125,7 @@
             // 
             // MegaProjComponents
             // 
-            this.MegaProjComponents.Location = new System.Drawing.Point(48, 58);
+            this.MegaProjComponents.Location = new System.Drawing.Point(49, 77);
             this.MegaProjComponents.Name = "MegaProjComponents";
             this.MegaProjComponents.Size = new System.Drawing.Size(196, 23);
             this.MegaProjComponents.TabIndex = 82;
@@ -133,7 +135,7 @@
             // 
             // MegaProjTimeStrategy
             // 
-            this.MegaProjTimeStrategy.Location = new System.Drawing.Point(48, 84);
+            this.MegaProjTimeStrategy.Location = new System.Drawing.Point(49, 103);
             this.MegaProjTimeStrategy.Name = "MegaProjTimeStrategy";
             this.MegaProjTimeStrategy.Size = new System.Drawing.Size(196, 23);
             this.MegaProjTimeStrategy.TabIndex = 81;
@@ -161,11 +163,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gardinia.Properties.Resources.logout;
+            this.pictureBox1.Location = new System.Drawing.Point(568, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 85;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 373);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.MegaProjComponents);
@@ -185,6 +199,7 @@
             this.Text = "home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.home_FormClosing);
             this.Load += new System.EventHandler(this.home_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +220,6 @@
         private System.Windows.Forms.Button MegaProjTimeStrategy;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

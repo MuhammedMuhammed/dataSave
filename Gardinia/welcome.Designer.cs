@@ -34,12 +34,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Vivaldi", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 160);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(154, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(364, 114);
+            this.label1.Size = new System.Drawing.Size(444, 108);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // welcome
             // 

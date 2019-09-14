@@ -700,12 +700,12 @@ namespace Gardinia.GardModels
                 
                 //percentageOfImplementationAccordingToPhrase
                  OleDbCommand OleDbCommand = new OleDbCommand (sql, conn);
-                OleDbCommand .Parameters.AddWithValue("@BuildUnitsFrom", (object)bd.BuildUnitsFrom ?? DBNull.Value);
-                OleDbCommand .Parameters.AddWithValue("@BuildUnitsTo", (object)bd.BuildUnitsTo ?? DBNull.Value);
-                OleDbCommand .Parameters.AddWithValue("@BuildReport", (object)bd.BuildReport ?? DBNull.Value);
-                OleDbCommand .Parameters.AddWithValue("@Image", (object)bd.Image ?? DBNull.Value);
-                OleDbCommand .Parameters.AddWithValue("@projectPhrase", (object)bd.projectPhrase ?? DBNull.Value);
-                OleDbCommand .Parameters.AddWithValue("@periodToImplementProject", (object)bd.periodToImplementProject ?? DBNull.Value );
+                OleDbCommand.Parameters.AddWithValue("@BuildUnitsFrom", (object)bd.BuildUnitsFrom ?? DBNull.Value);
+                OleDbCommand.Parameters.AddWithValue("@BuildUnitsTo", (object)bd.BuildUnitsTo ?? DBNull.Value);
+                OleDbCommand.Parameters.AddWithValue("@BuildReport", (object)bd.BuildReport ?? DBNull.Value);
+                OleDbCommand.Parameters.AddWithValue("@Image", (object)bd.Image ?? DBNull.Value);
+                OleDbCommand.Parameters.AddWithValue("@projectPhrase", (object)bd.projectPhrase ?? DBNull.Value);
+                OleDbCommand.Parameters.AddWithValue("@periodToImplementProject", (object)bd.periodToImplementProject ?? DBNull.Value );
                 OleDbCommand.Parameters.AddWithValue("@projectConsultative", (object)bd.projectConsultative ?? DBNull.Value);
                 OleDbCommand.Parameters.AddWithValue("@projectName", (object)bd.projectName ?? DBNull.Value);
                 OleDbCommand.Parameters.AddWithValue("@projectOwner", (object)bd.projectOwner ?? DBNull.Value);
